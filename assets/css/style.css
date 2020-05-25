@@ -17,9 +17,15 @@
     background-color: palevioletred;
     padding: 15px;
 }*/
+.card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
 
-.card-img-front,
-.card-img-back {
+.card.flip {
+  transform: rotateY(180deg);
+}
+.front-face, .back-face {
     width: 5em;
   height:5em;
   padding: 5px;
@@ -29,15 +35,8 @@
     
 }
 
-.card-img-front {
+.front-face {
     transform: rotateY(180deg);
 }
 
-.card:active {
-  transform: scale(0.97);
-  transition: transform .2s;
-}
 
-.card.flip {
-  transform: rotateY(180deg);
-}

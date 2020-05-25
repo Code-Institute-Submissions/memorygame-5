@@ -1,56 +1,43 @@
-.container {
-    background-color: yellow;
+.game-background {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: purple;
+    border-radius: 0.5em;
+    box-shadow: 0 8px 8px purple;
+    margin-top: 15px;
 }
 
-.memory-game {
-    width: 640px;
-  height: 640px;
-  margin: auto;
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  perspective: 1000px;
+/*.card {
+    width: 5em;
+    height: 5em;
+    border-radius: 0.3em;
+    margin: 1em;
+    cursor: pointer;
+    background-color: palevioletred;
+    padding: 15px;
+}*/
+
+.card-img-front,
+.card-img-back {
+    width: 5em;
+  height:5em;
+  padding: 5px;
+  border-radius: 5px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+    
 }
 
-.memory-card {
-   width: calc(25% - 10px);
-   height: calc(33.33%-10px);
-  margin: 5px;
-  
-  position: relative;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform .5s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+.card-img-front {
+    transform: rotateY(180deg);
 }
 
-.memory-card:active {
+.card:active {
   transform: scale(0.97);
   transition: transform .2s;
 }
 
-.memory-card.flip {
+.card.flip {
   transform: rotateY(180deg);
 }
-
-.front-face,
-.back-face {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  position: absolute;
-  border-radius: 5px;
-  background: #1C7CCC;
-  backface-visibility: hidden;
-}
-
-.front-face {
-  transform: rotateY(180deg);
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  }

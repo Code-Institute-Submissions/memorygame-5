@@ -11,16 +11,20 @@ body {
 .game-board {
     margin-top: 20px;
     max-width: 60%;
+    
 }
 
+
 .memory-card {
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin: 5px;
-    background-color: #eee;
+     width: 7.5em;
+    height: 8em;
+    background-color: yellow;
+    border-radius: 0.3em;
+    margin: 0.8em;
+    box-shadow: 2px 0 10px #212121;
     cursor: pointer;
 }
+
 
 .memory-card:hover {
     border: 1px solid pink;
@@ -28,6 +32,10 @@ body {
     box-sizing: border-box;
 }
 
+.fa {
+    font-size: xxx-large;
+    margin-top: .7em;
+}
 
 @media only screen and (max-width: 600px) {
     .memory-card {
@@ -41,5 +49,10 @@ body {
 
 .game-board {
     max-width: 80%;
+}
+
+.fa {
+    font-size: large;
+    margin-top: 2em;
 }
 }

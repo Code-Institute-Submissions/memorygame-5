@@ -11,6 +11,9 @@ body {
 .game-board {
     margin-top: 20px;
     max-width: 60%;
+    background: pink;
+    justify-content: space-around;
+    border-radius: 3px;
     
 }
 
@@ -18,11 +21,20 @@ body {
 .memory-card {
      width: 7.5em;
     height: 8em;
-    background-color: yellow;
+    background-color: paleturquoise;
     border-radius: 0.3em;
-    margin: 0.8em;
     box-shadow: 2px 0 10px #212121;
     cursor: pointer;
+    color: #ffffff;
+    justify-content: center;
+	align-items: center;
+    margin: 0.8em;
+    
+}
+
+.game-card-icon {
+    visibility: hidden;
+    font-size: 33px;
 }
 
 
@@ -32,27 +44,33 @@ body {
     box-sizing: border-box;
 }
 
-.fa {
-    font-size: xxx-large;
-    margin-top: .7em;
-}
 
-@media only screen and (max-width: 600px) {
-    .memory-card {
+
+@media only screen and (max-width: 600px)
+.memory-card {
     display: inline-block;
     width: 100px;
     height: 100px;
     margin: 5px;
-    background-color: #eee;
+    background-color:lightgreen;
     cursor: pointer;
+    color: #ffffff;
+    justify-content: center;
+	align-items: center;
+    font-size: 0px;
 }
 
 .game-board {
-    max-width: 80%;
+    max-width: 70%;
+}.memory-card:hover {
+    border: 1px solid pink;
+    box-shadow: inset 0px 0px 0px 1px pink;
+    box-sizing: border-box;
 }
 
-.fa {
-    font-size: large;
-    margin-top: 2em;
-}
+
+
+
+
+
 }

@@ -23,7 +23,7 @@
     display: block;
     padding-top: 100%;
 }
-.box .memory-card {
+.memory-card {
     position: absolute;
     left: 0;
     right: 0;
@@ -38,12 +38,12 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
-.box .memory-card:active {
+.memory-card:active {
   transform: scale(0.97);
   transition: transform .2s;
 }
 
-.box .memory-card.flip {
+.memory-card.flip {
   transform: rotateY(180deg);
 }
 

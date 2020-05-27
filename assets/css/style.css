@@ -1,3 +1,9 @@
+body {
+    background-image: url('memphis-mini.png');
+    background-size: cover;
+    background-color: transparent;
+}
+
 .grid {
     margin: 0 auto;
     width: 80vw;
@@ -66,3 +72,37 @@ img {
 .front-face {
   transform: rotateY(180deg);
 }
+
+.center {
+    text-align: center;
+}
+
+.btn{
+    background-color: #f065fc;
+}  
+
+.welcome-box {
+    width: 75%;
+    max-width: 600px;
+    background: #f1f1f1;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px #000000b3;
+    font-family: "Oswald", sans-serif;
+    margin-top: 25%;
+}
+
+.welcome-txt {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: blueviolet;
+    font-weight: 300;
+}
+

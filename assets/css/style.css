@@ -1,4 +1,12 @@
+body {
+background-image: url('../css/img/memphis-mini.png');
+background-size: cover;
+background-repeat: no-repeat;
+}
 
+h1 {
+    font-family: 'Balsamiq Sans', cursive;
+}
 
 .grid{
     margin: 0 auto;
@@ -91,7 +99,7 @@ img {
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 20px #000000b3;
-    font-family: "Oswald", sans-serif;
+    font-family: 'Balsamiq Sans', cursive;
     margin-top: 25%;
 }
 

@@ -111,3 +111,23 @@ img {
     font-weight: 300;
 }
 
+//score board
+
+
+.scoreboard .moves {
+    font-size: 30px;
+    color: turquoise;
+    margin-right: auto;
+}
+
+.scoreboard .move {
+    font-size: 20px;
+    color: yellowgreen;
+    margin-left: em10px;
+}
+
+.scoreboard .timer {
+    font-size: 30px;
+    color: pink;
+    margin-left: 1em;
+}

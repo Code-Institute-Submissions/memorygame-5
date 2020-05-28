@@ -3,6 +3,8 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let timeStart = "";
+let matchCount = 0; 
 
 function flipCard() {
   if (lockBoard) return;
@@ -14,6 +16,8 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
+     startTimer();
+        
 
     return;
   }
@@ -22,6 +26,7 @@ function flipCard() {
   secondCard = this;
 
   checkForMatch();
+   addMove();
 }
 
 function checkForMatch() {
@@ -53,15 +58,26 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
-  });
-})();
+function shuffle() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+    });
+}
 
+let moves = 0;
+
+function addMove() {
+    moves++;
+    const movesText = document.querySelector('.moves');
+    movesText.innerHTML = moves;
+
+}
+if (hasFlippedCard.length === 2) {
+    //checkForMatch(clickTarget);
+
+}
 //timer 
 //let stopTimer = false;//need this for the timer and the reset 
 let resetGame = true; //need this for game reset and modal 
@@ -120,3 +136,4 @@ function stopTimer() {
     clearInterval(timeStart); //clearInterval needs to use the variable from the setInterval 
     timeStart = '';
 }
+cards.forEach(card => card.addEventListener('click', flipCard));

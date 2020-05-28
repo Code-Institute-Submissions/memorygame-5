@@ -6,6 +6,7 @@ background-repeat: no-repeat;
 
 h1 {
     font-family: 'Balsamiq Sans', cursive;
+    color: plum;
 }
 
 .grid{
@@ -21,7 +22,7 @@ h1 {
     display: flex;
 }
 .box {
-    background: tomato;
+    background: turquoise;
     margin: 5px;
     color: white;
     font-weight: bold;
@@ -70,7 +71,6 @@ img {
   padding: 5px;
   position: absolute;
   border-radius: 5px;
-  background: #1C7CCC;
   backface-visibility: hidden;
 }
 

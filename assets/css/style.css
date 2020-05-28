@@ -1,16 +1,13 @@
-body {
-    background-image: url('memphis-mini.png');
-    background-size: cover;
-    background-color: transparent;
-}
 
-.grid {
+
+.grid{
     margin: 0 auto;
     width: 80vw;
     max-width: 60vh;
     height: 80vw;
     max-height: 60vh;
     font-size: 1rem;
+    perspective: 1000px;
 }
 .row {
     display: flex;

@@ -98,8 +98,21 @@ function restartGame() {
     moves = 0;
     const movesText = document.querySelector('.moves');
     movesText.innerHTML = moves;
-    aroo.play();
+   
 }
+
+ console.log(matchCount);
+    //if matchCount equals 8, all cards have been successfully matched and the game is over.
+    if (matchCount >= 8) {
+        gameOver();
+
+    }
+
+function gameOver() {
+    stopTimer();
+  
+}
+
 //restartBtn = document.getElementsByClassName("resetBtn");
 
 // restartBtn.addEventListener('click', function(e) {
@@ -135,5 +148,26 @@ function resetTimer() {
 function stopTimer() {
     clearInterval(timeStart); //clearInterval needs to use the variable from the setInterval 
     timeStart = '';
+}
+
+let resetBtn =
+    document.getElementById('resetBtn')
+resetBtn.addEventListener('click', resetPlay, false)
+
+
+function resetPlay() {
+    stopTimer();
+    resetTimer();
+    resetMoves();
+    resetStars();
+
+}
+
+function resetMoves() {
+    const movesText = document.querySelector('moves');
+    let moves = 0;
+    movesText.innerHTML = moves;
+
+
 }
 cards.forEach(card => card.addEventListener('click', flipCard));

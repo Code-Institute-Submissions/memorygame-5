@@ -1,10 +1,12 @@
 .bg-img {
-background-color: cornflowerblue;
+background: rgb(75, 13, 100);
+    background: linear-gradient(rgb(235, 148, 235),rgb(192, 192, 243),rgb(196, 235, 181));
 }
 
 h1 {
     font-family: 'Balsamiq Sans', cursive;
-    color: plum;
+    font-size: xx-large;
+    color: white;
 }
 
 .grid{
@@ -140,11 +142,11 @@ img {
     width: 100%;
     margin: auto;
     overflow: hidden;
-    background-color: rgba(7, 1, 17, 0.4);
+    background-color: pink;
 }
 
 .modal-content {
-    background-color: #15f032;
+    background-color: lemonchiffon;
     /*margin: 30% auto;*/
     width: 40%;
     margin: auto;
@@ -161,7 +163,6 @@ img {
 
 .modal-header {
     background: blueviolet;
-    background: linear-gradient(rgb(9, 143, 27), rgb(51, 33, 151));
     padding: 15px;
     color: #f4f4f4;
     text-align: center;
@@ -173,7 +174,7 @@ img {
 
 .modal-footer {
     
-    background: linear-gradient(rgb(14, 214, 7),rgb(138, 2, 2),rgb(4, 2, 105));
+    background: lavender;
     padding: 10px;
     color: #f4f4f4;
     text-align: center;
@@ -183,12 +184,12 @@ img {
     color: rgb(46, 21, 92);
     float: right;
     font-size: 30px;
-    color: wheat;
+    color: pink;
 }
 
 .closeBtn:hover,
 .closeBtn:focus {
-    color: black;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }

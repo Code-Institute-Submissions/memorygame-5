@@ -153,6 +153,16 @@ function gameOver() {
     closeModal();
 }
 
+let closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+//Listen for close click
+closeBtn.addEventListener('click', closeModal);
+
+function closeModal() {
+    modal.style.display = 'none'; //element will not be displayed 
+}
+
+
 function openModal() {
     modal.style.display = 'block'; // this is rendered as a block level element 
 }

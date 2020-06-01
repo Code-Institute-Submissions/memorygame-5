@@ -12,9 +12,9 @@
 
 <body>
 <section class="bg-img">
-    <div class="container-fluid mt-3">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center mt-3">
             <h1>FLIPCARD</h1>
             </div>
         </div>
@@ -63,13 +63,30 @@
         
     </div>
 </div>
-         
-
-
-
-
-
 </section>
+
+ <!--Modal on game over -->
+        <div class="modal" id="levelCompleteModal">
+            <div class="modal-content">
+                <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
+                <div class="modal-header">
+                    <h2>Game Over</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="message">
+                        <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
+                        <p>You completed the game using <span id="totalGameMoves"></span> moves
+                            <br>in <span id="totalGameTime"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="brown-button" onClick="playAgain()">Play Again </button>
+                </div>
+            </div>
+        </div>
+
+
 <script src="script.js"></script>
 </body>
 

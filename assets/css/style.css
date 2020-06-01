@@ -1,7 +1,5 @@
 .bg-img {
-background-image: url('../css/img/memphis-mini.png');
-background-size: cover;
-background-repeat: no-repeat;
+background-color: cornflowerblue;
 }
 
 h1 {
@@ -121,8 +119,8 @@ img {
 }
 
 .scoreboard .move {
-    font-size: 20px;
-    color: yellowgreen;
+    font-size: 30px;
+    color: pink;
     margin-left: em10px;
 }
 

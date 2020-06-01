@@ -4,7 +4,11 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let timeStart = "";
-let matchCount = 0; 
+let matchedCards =  [];
+let totalGameMovesElement = document.getElementById('totalGameMoves');
+let totalGameTimeElement = document.getElementById('totalGameTime');
+let finalStarRatingElement = document.getElementById('finalStarRating');
+let closeModalIcon = document.getElementById('closeModal');
 
 function flipCard() {
   if (lockBoard) return;
@@ -82,35 +86,59 @@ if (hasFlippedCard.length === 2) {
 //let stopTimer = false;//need this for the timer and the reset 
 let resetGame = true; //need this for game reset and modal 
 
-let hour = 0;
-let minute = 0;
-let second = 0;
+let second = 0,
+    minute = 0,
+    hour = 0,
+    interval,
+    totalGameTime,
+    starRating;
 
-function restartGame() {
-    if (timeStart) stopTimer();
-    resetTimer();
-    cards.forEach(card => {
-        card.classList.remove('flip');
-        card.addEventListener('click', flipCard);
-    });
-    shuffle();
-    matchCount = 0;
-    moves = 0;
-    const movesText = document.querySelector('.moves');
-    movesText.innerHTML = moves;
-   
-}
+function startTimer() {
+    interval = setInterval(function(){
+        timer.innerHTML = `${minute} mins ${second} secs`;
+        second++;
+        if(second == 60) {
+            minute++;
+            second = 0;
+        }
+        if(minute == 60) {
+            hour++;
+            minute = 0;
+        }
+    }, 1000)
+}    
+
 
  console.log(matchCount);
     //if matchCount equals 8, all cards have been successfully matched and the game is over.
-    if (matchCount >= 8) {
+    if (matchCount >= 6) {
         gameOver();
 
     }
 
+
 function gameOver() {
-    stopTimer();
-  
+    clearInterval(interval);
+    totalGameTime = timer.innerHTML;
+    
+
+    //show modal on game end
+    modalElement.classList.add("show-modal");
+    
+    //show totalGameTime, moves and finalStarRating in Modal
+    totalGameTimeElement.innerHTML = totalGameTime;
+    totalGameMovesElement.innerHTML = moves;
+   
+
+    matchedCards = [];
+    closeModal();
+}
+
+function closeModal() {
+    closeModalIcon.addEventListener("click", function() {
+        modalElement.classList.remove("show-modal");
+        startGame();
+    })
 }
 
 //restartBtn = document.getElementsByClassName("resetBtn");

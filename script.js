@@ -4,18 +4,20 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let timeStart = "";
-let matchedCards =  [];
+let matchCount= 0;
 let totalGameMovesElement = document.getElementById('totalGameMoves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
 let finalStarRatingElement = document.getElementById('finalStarRating');
 let closeModalIcon = document.getElementById('closeModal');
+let modal = document.getElementById('levelCompleteModal');
+
 
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
 
   this.classList.add('flip');
-
+    console.log("Flippen heck");
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
@@ -34,9 +36,29 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  let isMatch = (firstCard.dataset.framework === secondCard.dataset.framework);
 
-  isMatch ? disableCards() : unflipCards();
+ if ( isMatch) 
+ { 
+     disableCards();
+     matchCount = matchCount +1
+     if(matchCount >= 6)
+     {
+        gameOver();
+        console.log("game over")
+     }
+     else
+     {
+        console.log("Game continues... matchCount is:" + matchCount);
+     }
+ }
+ else
+ {
+      unflipCards();
+ }
+
+ 
+  console.log("IS MATCH " + isMatch);
 }
 
 function disableCards() {
@@ -95,7 +117,9 @@ let second = 0,
 
 function startTimer() {
     interval = setInterval(function(){
-        timer.innerHTML = `${minute} mins ${second} secs`;
+        let currentTime = `${minute} mins ${second} secs`;
+        if(currentTime != null)
+            timer.innerHTML = currentTime;
         second++;
         if(second == 60) {
             minute++;
@@ -109,29 +133,28 @@ function startTimer() {
 }    
 
 
- console.log(matchCount);
-    //if matchCount equals 8, all cards have been successfully matched and the game is over.
-    if (matchCount >= 6) {
-        gameOver();
-
-    }
 
 
 function gameOver() {
-    clearInterval(interval);
-    totalGameTime = timer.innerHTML;
+    //totalGameTime = timer.innerHTML;
     
 
     //show modal on game end
-    modalElement.classList.add("show-modal");
+    openModal();
     
-    //show totalGameTime, moves and finalStarRating in Modal
-    totalGameTimeElement.innerHTML = totalGameTime;
-    totalGameMovesElement.innerHTML = moves;
+    //show totalGameTime, moves
+   // if( totalGameTime != null)
+        //totalGameTimeElement.innerHTML = totalGameTime;
+    //if(moves != null)
+        totalGameMovesElement.innerHTML = moves;
    
 
-    matchedCards = [];
+  //  matchedCards = [];
     closeModal();
+}
+
+function openModal() {
+    modal.style.display = 'block'; // this is rendered as a block level element 
 }
 
 function closeModal() {
@@ -161,8 +184,14 @@ function startTimer() {
                 //second = timer - hour * 3600 - minute * 60;
                 //if (hour < 10) hour = '0' + hour;
                 //if (minute < 10) minute = '0' + second;
-                document.querySelector(".timer").innerHTML = minute + ':' + second;
-                document.querySelector(".clock").innerHTML = minute + ':' + second;
+                let elaspedTime = minute + ':' + second;
+                if(elaspedTime != null)
+                {
+                       // console.log("elapsedTime " + elaspedTime);
+                        document.querySelector(".timer").innerHTML = elaspedTime;
+                        //document.querySelector(".clock").innerHTML = elaspedTime;
+                }
+
             }, 1000);
         }
     }
@@ -187,7 +216,7 @@ function resetPlay() {
     stopTimer();
     resetTimer();
     resetMoves();
-    resetStars();
+    
 
 }
 

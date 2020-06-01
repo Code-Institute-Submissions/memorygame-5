@@ -129,3 +129,66 @@ img {
     color: pink;
     margin-left: 1em;
 }
+
+//modal 
+
+.modal {
+    position:absolute;
+    display: none;
+    z-index: 1;
+    top:100px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgba(7, 1, 17, 0.4);
+}
+
+.modal-content {
+    background-color: #15f032;
+    /*margin: 30% auto;*/
+    width: 40%;
+    margin: auto;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: 3s;
+    text-align: center;
+}
+
+.modal-header h2,
+.modal-footer h3 {
+    margin: 0;
+}
+
+.modal-header {
+    background: blueviolet;
+    background: linear-gradient(rgb(9, 143, 27), rgb(51, 33, 151));
+    padding: 15px;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 10px 20px;
+}
+
+.modal-footer {
+    
+    background: linear-gradient(rgb(14, 214, 7),rgb(138, 2, 2),rgb(4, 2, 105));
+    padding: 10px;
+    color: #f4f4f4;
+    text-align: center;
+}
+
+.closeBtn {
+    color: rgb(46, 21, 92);
+    float: right;
+    font-size: 30px;
+    color: wheat;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

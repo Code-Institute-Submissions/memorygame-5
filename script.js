@@ -7,43 +7,34 @@ let lockBoard = false;
 let firstCard, secondCard;
 let timeStart = "";
 let matchCount= 0;
+let resetGame = true;
+let elaspedTime = 0;
 let totalGameMovesElement = document.getElementById('totalGameMoves');
 let moves = document.getElementsByClassName('.moves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
+let timer = document.getElementById('timer')
 let finalStarRatingElement = document.getElementById('finalStarRating');
 let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
 let movesCount = 0;
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
-//if ((closeBtn) && (typeof closeModal === "function") ) 
-//	closeBtn.addEventListener('click', closeModal());
-//else
-//	console.log("Could not add listener for element, it does not exist");
-assignClickListner(closeModalBtn,closeModal);
-assignClickListner(resetBtn,resetPlay);
+let imagesCollection = [];
+let imagesAllocation = [];
+let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
+			 "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
+	
 
-//timer 
-//let stopTimer = false;//need this for the timer and the reset 
-let resetGame = true; //need this for game reset and modal 
 
-let second = 0,
-    minute = 0,
-    hour = 0,
-    interval,
-    totalGameTime,
-    starRating;
 
-//Add Listners
+
+//Add Event Listners 
+
+ assignClickListner(closeModalBtn,closeModal);
 
 if(cards)
 	cards.forEach(card => card.addEventListener('click', flipCard));
 else
 	log("Cards not defined");
-
-
-
-
-
 
 initGame()
 
@@ -60,26 +51,140 @@ function assignClickListner(element,func)
 	}
 }
 
+//main game play
+
 function assignPictures()
 {
-	var img = document.getElementsByTagName("img");
-	var imgSrcs = [];
-	let images = [];
 
-	for (var i = 0; i < img.length; i++) {
-		imgSrcs.push(img[i].src);
-		log(img[i].src);
-		//img[i].src = "http://192.168.1.15/img/pug.png"
-	}
-
-	for (var i = 1; i < 13; i++) {
-		images.push(document.getElementById("img" + i));
-		log("Image id = " + images[i-1].src);
-	}
-	
-	//return imgSrcs;
+	getImagesCollection();
+	clearImagesAllocation();
+	logImagesCollection();
+	//shuffleImages();
+	shuffleImagesTest();
+	setImageSources();
+	logImagesCollection();
 
 }
+
+
+function getImagesCollection()
+{
+
+	imagesCollection = document.querySelectorAll('img.front-face');
+	
+}
+
+function allocateImage(imageIndex,value)
+{
+	imagesAllocation[imageIndex] = value;
+}
+
+
+function setImageSource(imageIndex,srcIndex)
+{
+	imagesCollection[imageIndex].src = srcsCollection[allocationIndex[srcIndex]];
+}
+
+function IsNumberAllocated(number)
+{
+	for (var i = 0; i < imagesAllocation.length; i++) {
+
+		if( number === imagesAllocation[i])
+			return true;		
+	}
+	return false;
+}
+
+
+//sets the source png for an image, also sets the alt and dataset to same name
+function setImageSources()
+{
+	for (var i = 0; i < imagesAllocation.length; i++) {
+		let index = imagesAllocation[i] -1;
+		//log("Index " + index + " dog " + dogsCollection[index]);
+		imagesCollection[i].src="../img/" + dogsCollection[index] + ".png";
+		imagesCollection[i].alt= dogsCollection[index];
+		imagesCollection[i].parentElement.dataset.framework = dogsCollection[index] ;	
+		log("Assigning " + dogsCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
+	}
+	return false;
+}
+
+function shuffleImages()
+{
+	let randomPos=0
+	let attempts=0;
+	for (var i = 0; i < imagesAllocation.length; i++) {
+		do
+		{
+			randomPos = Math.floor(Math.random() * 13);
+	
+			//log("randomPos = " + randomPos);
+			attempts++;
+			if(attempts > 40)
+			{
+				log("Giving up");
+				break;
+			}
+		}		
+		while (IsNumberAllocated(randomPos))
+		attempts = 0;
+		imagesAllocation[i] = randomPos;
+		log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
+	}
+}
+
+
+function shuffleImagesTest()
+{
+	let randomPos=0
+	let attempts=0;
+	for (var i = 0; i < imagesAllocation.length; i++) {
+		imagesAllocation[i] = i+1;
+		log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
+	}
+}
+
+
+//image in an index into the collection of images
+function logImageDetails(imageIndex)
+{
+	
+	log("src = " + imagesCollection[imageIndex].src + " Allocation = " + imagesAllocation[imageIndex]);
+
+} 
+
+function clearImagesAllocation()
+{
+		for (var i = 0; i < imagesCollection.length; i++) {
+		
+		imagesAllocation[i] = 0;
+		
+	}
+}
+
+//creates a collection of images with front faces
+function logImagesCollection()
+{
+	for (var i = 0; i < imagesCollection.length; i++) {
+		
+		log(imagesCollection[i]);
+		
+	}
+}
+
+
+function restoreCards()
+{
+	for (var i = 0; i < cards.length; i++) {
+		
+		cards[i].classList.add('flip');
+		
+	}
+
+;
+}
+
 
 function flipCard()
 {
@@ -89,7 +194,6 @@ function flipCard()
     return;
 
   this.classList.add('flip');
-    console.log("Flippen heck");
   if (!hasFlippedCard)
   {
     // first click
@@ -110,7 +214,7 @@ function flipCard()
 
 function checkForMatch() {
   let isMatch = (firstCard.dataset.framework === secondCard.dataset.framework);
-
+	log("Datasets first " + firstCard.parentElement + " second  " + secondCard.parentElement);
  if ( isMatch) 
  { 
      disableCards();
@@ -157,40 +261,20 @@ function resetBoard() {
   [firstCard, secondCard] = [null, null];
 }
 
-(function shuffle() {
+(function start() {
   assignPictures();
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
-    log("Assigning values to cards: " + randomPos);	
-  });
+
 })();
 
 
 
 function addMove() {
     movesCount++;
-    moves.innerHTML = movesCount;
+    log(moves.innerHTML + " Adding " + movesCount + " to " + moves);
+    document.querySelector(".moves").innerHTML = movesCount;
 
 }
 
-
-function startTimer() {
-    interval = setInterval(function(){
-        let currentTime = `${minute} mins ${second} secs`;
-        if(currentTime != null)
-            timer.innerHTML = currentTime;
-        second++;
-        if(second == 60) {
-            minute++;
-            second = 0;
-        }
-        if(minute == 60) {
-            hour++;
-            minute = 0;
-        }
-    }, 1000)
-}    
 
 
 function log(textToLog)
@@ -201,36 +285,30 @@ function log(textToLog)
 
 function initGame()
 {
-	
-	hasFlippedCard = false;
+    //unflipCards();
+    hasFlippedCard = false;
 	lockBoard = false;
 	timeStart = "";
 	matchCount= 0;
-	moves=0;
-	resetPlay();
+	moves.innerHTML = 0;
+    resetPlay();
+    resetBoard();
 	log("Staring new Game");
 }
 
+// GAME OVER
 function gameOver() {
-    //totalGameTime = timer.innerHTML;
-    
+
 
     //show modal on game end
     openModal();
-    
-    //show totalGameTime, moves
-   // if( totalGameTime != null)
-        //totalGameTimeElement.innerHTML = totalGameTime;
-    //if(moves != null)
-        totalGameMovesElement.innerHTML = movesCount;
+    stopTimer();
    
-
-  //  matchedCards = [];
-    //closeModal();
 }
 
 
 function closeModal() {
+   
 	log("Closing Model");
     	modal.style.display = 'none'; //element will not be displayed 
 	initGame();
@@ -239,15 +317,14 @@ function closeModal() {
 
 function openModal() {
     modal.style.display = 'block'; // this is rendered as a block level element 
+
+    totalGameTimeElement.innerHTML = elaspedTime;
+    totalGameMoves.innerHTML = movesCount +1;
 }
 
 
 
-//restartBtn = document.getElementsByClassName("resetBtn");
 
-// restartBtn.addEventListener('click', function(e) {
-// });
-//     restartBtn = document.getElementsByClassName("resetBtn");
 function startTimer() {
     if (resetGame == true) {
         let timer = 0;
@@ -263,7 +340,7 @@ function startTimer() {
                 //second = timer - hour * 3600 - minute * 60;
                 //if (hour < 10) hour = '0' + hour;
                 //if (minute < 10) minute = '0' + second;
-                let elaspedTime = minute + ':' + second;
+                elaspedTime = minute + ':' + second;
                 if(elaspedTime != null)
                 {
                        // console.log("elapsedTime " + elaspedTime);
@@ -304,6 +381,3 @@ function resetMoves() {
 
 
 }
-
-
-

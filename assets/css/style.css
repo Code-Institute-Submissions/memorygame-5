@@ -1,6 +1,13 @@
 .bg-img {
 background: rgb(75, 13, 100);
     background: linear-gradient(rgb(235, 148, 235),rgb(192, 192, 243),rgb(196, 235, 181));
+    height: 100vh;
+}
+
+body {
+    background: rgb(75, 13, 100);
+    background: linear-gradient(rgb(235, 148, 235),rgb(192, 192, 243),rgb(196, 235, 181));
+    height: 100vh;
 }
 
 h1 {
@@ -83,13 +90,13 @@ img {
 }
 
 .btn{
-    background-color: #f065fc;
+    background-color: turquoise;
 }  
 
 .welcome-box {
     width: 75%;
     max-width: 600px;
-    background: #f1f1f1;
+    background: #87cce0;
     position: relative;
     top: 50%;
     left: 50%;
@@ -123,10 +130,10 @@ img {
 .scoreboard .move {
     font-size: 30px;
     color: pink;
-    margin-left: em10px;
+    margin-left: 10px;
 }
 
-.scoreboard .timer {
+.scoreboard .Time {
     font-size: 30px;
     color: pink;
     margin-left: 1em;
@@ -146,7 +153,7 @@ img {
 }
 
 .modal-content {
-    background-color: lemonchiffon;
+    background-color: rgb(196, 235, 181);
     /*margin: 30% auto;*/
     width: 40%;
     margin: auto;
@@ -162,7 +169,7 @@ img {
 }
 
 .modal-header {
-    background: blueviolet;
+    background: turquoise;
     padding: 15px;
     color: #f4f4f4;
     text-align: center;
@@ -192,4 +199,9 @@ img {
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+.moves, .timer {
+    color:aliceblue;
+    font-size: 30px;
 }

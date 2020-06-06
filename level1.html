@@ -20,27 +20,20 @@
         </div>
     </div>
     <section>
-    <div id="jquery_jplayer_1"></div>
-<div id="jp_container_1">
- <a href="#" class="jp-play">Play</a>
- <a href="#" class="jp-pause">Pause</a>
-</div>
         <div class="scoreboard center">
-              <span class="moves">0</span>
       <span class="move">Moves</span>
+      <span class="moves">0</span>
       <!--timer-->
+      <span class="Time">Time</span>
       <span class="timer">0:00</span>
         </div>
-         <div id= "resetBtn" class = "reset center">reset
-      <i class="fa fa-repeat"></i>
-    </div>
     </section>
 
-<section class="center">
+<section class="center mt-3">
 <a href="home.html" class="btn btn-lg">How to Play</a>         <a href="level1.html" class="btn btn-lg">Restart Game</a>
 </section>
 
-   <div class="grid mt-3">
+   <div class="grid mt-4">
     <div class="row">
         <div class="box"><div class="memory-card" data-framework="frenchie"><img id ="img1" class="front-face" src="../img/frenchie.png" alt="frenchie" /><img class="back-face" src="../img/blank.png" alt="blank" /></div></div>
         <div class="box"><div class="memory-card" data-framework="maltease"><img id="img2" class="front-face" src="../img/maltease.png" alt="maltease" /><img class="back-face" src="../img/blank.png" alt="blank" /></div></div>
@@ -68,28 +61,21 @@
  <!--Modal on game over -->
         <div class="modal" id="levelCompleteModal">
             <div class="modal-content">
-                <span aria-label="close" role="button" class="closeBtn" id="closeModal">&times;</span>
-                <div class="modal-header">
-                    <h2>Game Over</h2>
-                </div>
-               <div class="modal" id="levelCompleteModal">
-            <div class="modal-content">
                 <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
                 <div class="modal-header">
-                    <h2>Game Over</h2>
+                    <h2 class="center">Game Over</h2>
                 </div>
                 <div class="modal-body">
                     <div class="message">
                         <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
-                        <p>You completed the game using <span id="totalGameMoves"></span> moves
-                            <br>in <span id="totalGameTime"></span>
+                        <p>You completed the game using <span id="totalGameMoves"></span> moves! <br>in <span id="totalGameTime"></span>
                         </p>
+                        <a href="level1.html" class="btn btn-lg">Restart Game</a>
                     </div>
                 </div>
 
             </div>
         </div>
-
 
 
 <script src="script.js"></script>

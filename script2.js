@@ -18,11 +18,11 @@ let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
 let movesCount = 0;
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
-
 let imagesCollection = [];
 let imagesAllocation = [];
-let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
-			 "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
+let fruitCollection = [ "banana","banana","apple","apple","avocado",
+			 "avocado","grapes","grapes","pinapple","pinapple","strawberry","strawberry", 
+             "watermelon","watermelon", "lemon","lemon"];
 	
 
 
@@ -102,43 +102,13 @@ function setImageSources()
 {
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		let index = imagesAllocation[i] -1;
-		//log("Index " + index + " dog " + dogsCollection[index]);
-		imagesCollection[i].src="../img/" + dogsCollection[index] + ".png";
-		imagesCollection[i].alt= dogsCollection[index];
-		imagesCollection[i].parentElement.dataset.framework = dogsCollection[index] ;	
-		log("Assigning " + dogsCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
+		//log("Index " + index + " dog " + fruitdogsCollection[index]);
+		imagesCollection[i].src="../img/" + fruitCollection[index] + ".png";
+		imagesCollection[i].alt= fruitCollection[index];
+		imagesCollection[i].parentElement.dataset.framework = fruitCollection[index] ;	
+		log("Assigning " + fruitCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
 	}
 	return false;
-}
-
- function unflipCards() {
-    for (var i = 0; i < cards.length; i++) 
-        {
-		
-		cards[i].classList.remove('flip');
-		
-	}
-}
-
-
-function hint() {
-for(i=0; i<cards.length; i++) {
-if(cards === "flipped")
-		  cards[i].classList.add('flip');
-log("hint test");
-}
-setTimeout(hide, 1000)
-}
-
-
-function hide()
-{
-
-	for (var i = 0; i < cards.length; i++) {
-		
-		cards[i].classList.remove('flip');
-		
-	}
 }
 
 function shuffleImages()
@@ -148,7 +118,7 @@ function shuffleImages()
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		do
 		{
-			randomPos = Math.floor(Math.random() * 13);
+			randomPos = Math.floor(Math.random() * 17);
 	
 			//log("randomPos = " + randomPos);
 			attempts++;
@@ -167,6 +137,7 @@ function shuffleImages()
 
 
 function shuffleImagesTest()
+
 {
 	let randomPos=0
 	let attempts=0;
@@ -250,7 +221,7 @@ function checkForMatch() {
  { 
      disableCards();
      matchCount = matchCount +1
-     if(matchCount >= 6)
+     if(matchCount >= 8)
      {
         gameOver();
         log("game over")

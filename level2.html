@@ -1,88 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>Memory Game</title>
-    <meta name="description" content="">
-     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <title>FLIPCARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-<div class="container">
-        <header>
-            <h1 class="text-center">FlipCard - Memory Game</h1>
-        </header>
-        <section>
+
+<body class="fruitbackg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+            <h1>FLIPCARD</h1>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="scoreboard center">
+      <span class="move">Moves</span>
+      <span class="moves">0</span>
+      <!--timer-->
+      <span class="Time">Time</span>
+      <span class="timer">0:00</span>
+        </div>
+    </section>
+
+<section class="center mt-3">
+<a href="home.html" class="btn btn-lg">How to Play</a>         <a href="level1.html" class="btn btn-lg">Restart Game</a>
+</section>
+
+   <div class="grid mt-4">
+    <div class="row">
+        <div class="box"><div class="memory-card" data-framework="grapes"><img id ="img1" class="front-face" src="../img/grapes.png" alt="grapes" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="strawberry"><img id="img2" class="front-face" src="../img/strawberry.png" alt="strawberry" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="watermelon"><img id="img3" class="front-face" src="../img/watermelon.png" alt="watermelon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="banana"><img id="img4" class="front-face" src="../img/banana.png" alt="banana" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
         
-        </section>    
-        <table class="game-background">
-            <tbody class="grid">
-                <tr>
-                    <td class="memory-card flip" data-framework="burger">
-                        <img class="front-face" src="../img/cheeseburger.png" alt="burger" />
-                           <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="burger">
-                        <img class="front-face" src="../img/cheeseburger.png" alt="burger" />
-                         <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="pizza">
-                        <img class="front-face" src="../img/pizza.png" alt="pizza" />
-                           <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="fries">
-                    <img class="front-face" src="../img/fries.png" alt="fries" />
-                       <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="memory-card flip" data-framework="fries">
-                        <img class="front-face" src="../img/fries.png" alt="fries" />
-                           <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="pizza">
-                        <img class="front-face" src="../img/pizza.png" alt="pizza" />
-                           <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="hotdog">
-                        <img class="front-face" src="../img/hotdog.png" alt="hotdog" />
-                          <img class="back-face" src="../img/blank.png" alt="blank" /> 
-                    </td>
-                    <td class="memory-card flip" data-framework="icecream">
-                        <img class="front-face" src="../img/ice-cream.png" alt="ice-cream" />
-                           <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                </tr>
-                <tr>
-                <td class="memory-card flip" data-framework="hotdog">
-                        <img class="front-face" src="../img/hotdog.png" alt="hotdog" />
-                          <img class="back-face" src="../img/blank.png" alt="blank" />
-                </td>
-                    <td class="memory-card flip" data-framework="icecream">
-                        <img class="front-face" src="../img/ice-cream.png" alt="ice-cream" />
-                     <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="milkshake">
-                        <img class="front-face" src="../img/milkshake.png" alt="ice-cream" />
-                          <img class="back-face" src="../img/blank.png" alt="blank" />
-                    </td>
-                    <td class="memory-card flip" data-framework="milkshake">
-                    <img class="front-face" src="../img/milkshake.png" alt="ice-cream" />
-                        <img class="back-face" src="../img/blank.png" alt="blank" />  
-                </td>
-                </tr> 
-            </tbody>   
-        </table>
+    </div>
+    <div class="row">
+        <div class="box"><div class="memory-card" data-framework="lemon"><img id="img5" class="front-face" src="../img/lemon.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="pinapple"><img id="img6" class="front-face" src="../img/pinapple.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="lemon"><img id="img7" class="front-face" src="../img/lemon.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="pinapple"><img id="img8" class="front-face" src="../img/pinapple.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+       
+    </div>
+    <div class="row">
+        <div class="box"><div class="memory-card" data-framework="grapes"><img id="img9" class="front-face" src="../img/grapes.png" alt="grapes" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="strawberry"><img id="img10" class="front-face" src="../img/strawberry.png" alt="strawberry" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="watermelon"><img id="img11" class="front-face" src="../img/watermelon.png" alt="watermelon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="banana"><img id="img12" class="front-face" src="../img/banana.png" alt="banana" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>      
+    </div>
+    <div class="row">
+        <div class="box"><div class="memory-card" data-framework="apple"><img id="img9" class="front-face" src="../img/apple.png" alt="apple" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="avocado"><img id="img10" class="front-face" src="../img/avocado.png" alt="avocado" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="apple"><img id="img9" class="front-face" src="../img/apple.png" alt="apple" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        <div class="box"><div class="memory-card" data-framework="avocado"><img id="img10" class="front-face" src="../img/avocado.png" alt="avocado" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
+        
+    </div>
+</section>
+
+ <!--Modal on game over -->
+        <div class="modal" id="levelCompleteModal">
+            <div class="modal-content">
+                <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
+                <div class="modal-header">
+                    <h2 class="center">Game Over</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="message">
+                        <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
+                        <p>You completed the game using <span id="totalGameMoves"></span> moves! <br>in <span id="totalGameTime"></span>
+                        </p>
+                        <a href="level2.html" class="btn btn-lg">Restart Game</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
-
-</div>        
-
-
-
-
-
-<script src="script.js"></script>
+<script src="script2.js"></script>
 </body>
 
 </html>

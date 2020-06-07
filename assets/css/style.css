@@ -1,12 +1,12 @@
-.bg-img {
-background: rgb(75, 13, 100);
+
+body {
+   
     background: linear-gradient(rgb(235, 148, 235),rgb(192, 192, 243),rgb(196, 235, 181));
     height: 100vh;
 }
 
-body {
-    background: rgb(75, 13, 100);
-    background: linear-gradient(rgb(235, 148, 235),rgb(192, 192, 243),rgb(196, 235, 181));
+.fruitbackg {
+    background: linear-gradient(rgb(255, 26, 0),rgb(255, 141, 65),rgb(255, 211, 0));
     height: 100vh;
 }
 
@@ -204,4 +204,9 @@ img {
 .moves, .timer {
     color:aliceblue;
     font-size: 30px;
+}
+
+.show-img {
+    visibility: visible;
+    animation: animateShowImage 0.4s linear alternate;
 }

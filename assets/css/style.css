@@ -205,8 +205,7 @@ img {
     color:aliceblue;
     font-size: 30px;
 }
-
-.show-img {
-    visibility: visible;
+.show {
+    backface-visibility: visible;
     animation: animateShowImage 0.4s linear alternate;
 }

@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.memory-card');
 
 let debug=true;
+let cardState = [];
 let shuffleOn=true;
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -122,10 +123,9 @@ function setImageSources()
 
 
 function hint() {
-for(i=0; i<cards.length; i++) {
-if(cards === "flipped")
+    for (var i = 0; i < cards.length; i++) {
+          if(cards[i].dataset.state === "unflipped")
 		  cards[i].classList.add('flip');
-log("hint test");
 }
 setTimeout(hide, 1000)
 }
@@ -135,7 +135,7 @@ function hide()
 {
 
 	for (var i = 0; i < cards.length; i++) {
-		
+		if(cards[i].dataset.state === "unflipped")
 		cards[i].classList.remove('flip');
 		
 	}
@@ -216,6 +216,11 @@ function restoreCards()
 ;
 }
 
+function readFlip () {
+    for (var i = 0; i < cards.length; i++) {
+        log("flipped state " + cards[i].dataset.state );
+    }
+}
 
 function flipCard()
 {
@@ -272,6 +277,8 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+  firstCard.dataset.state= "flipped";
+  secondCard.dataset.state= "flipped";
 
   resetBoard();
 }

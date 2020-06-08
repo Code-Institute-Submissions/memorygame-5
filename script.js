@@ -14,20 +14,15 @@ let totalGameMovesElement = document.getElementById('totalGameMoves');
 let moves = document.getElementsByClassName('.moves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
 let timer = document.getElementById('timer')
-let finalStarRatingElement = document.getElementById('finalStarRating');
 let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
 let movesCount = 0;
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
-
 let imagesCollection = [];
 let imagesAllocation = [];
 let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
 			 "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
 	
-
-
-
 
 //Add Event Listners 
 
@@ -38,7 +33,7 @@ if(cards)
 else
 	log("Cards not defined");
 
-initGame()
+
 
 function assignClickListner(element,func)
 {
@@ -68,7 +63,7 @@ function assignPictures()
 
 }
 
-
+// retrieves images and randomly allocates them to the game board
 function getImagesCollection()
 {
 
@@ -95,50 +90,6 @@ function IsNumberAllocated(number)
 			return true;		
 	}
 	return false;
-}
-
-
-//sets the source png for an image, also sets the alt and dataset to same name
-function setImageSources()
-{
-	for (var i = 0; i < imagesAllocation.length; i++) {
-		let index = imagesAllocation[i] -1;
-		//log("Index " + index + " dog " + dogsCollection[index]);
-		imagesCollection[i].src="../img/" + dogsCollection[index] + ".png";
-		imagesCollection[i].alt= dogsCollection[index];
-		imagesCollection[i].parentElement.dataset.framework = dogsCollection[index] ;	
-		log("Assigning " + dogsCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
-	}
-	return false;
-}
-
- function unflipCards() {
-    for (var i = 0; i < cards.length; i++) 
-        {
-		
-		cards[i].classList.remove('flip');
-		
-	}
-}
-
-
-function hint() {
-    for (var i = 0; i < cards.length; i++) {
-          if(cards[i].dataset.state === "unflipped")
-		  cards[i].classList.add('flip');
-}
-setTimeout(hide, 1000)
-}
-
-
-function hide()
-{
-
-	for (var i = 0; i < cards.length; i++) {
-		if(cards[i].dataset.state === "unflipped")
-		cards[i].classList.remove('flip');
-		
-	}
 }
 
 function shuffleImages()
@@ -173,6 +124,51 @@ function shuffleImagesTest()
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		imagesAllocation[i] = i+1;
 		log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
+	}
+}
+
+
+
+//sets the source png for an image, also sets the alt and dataset to same name
+function setImageSources()
+{
+	for (var i = 0; i < imagesAllocation.length; i++) {
+		let index = imagesAllocation[i] -1;
+		//log("Index " + index + " dog " + dogsCollection[index]);
+		imagesCollection[i].src="../img/" + dogsCollection[index] + ".png";
+		imagesCollection[i].alt= dogsCollection[index];
+		imagesCollection[i].parentElement.dataset.framework = dogsCollection[index] ;	
+		log("Assigning " + dogsCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
+	}
+	return false;
+}
+
+ function unflipCards() {
+    for (var i = 0; i < cards.length; i++) 
+        {
+		
+		cards[i].classList.remove('flip');
+		
+	}
+}
+
+// flashes cards for 600 milliseconds to give game player a hint
+function hint() {
+    for (var i = 0; i < cards.length; i++) {
+          if(cards[i].dataset.state === "unflipped")
+		  cards[i].classList.add('flip');
+}
+setTimeout(hide, 600)
+}
+
+
+function hide()
+{
+
+	for (var i = 0; i < cards.length; i++) {
+		if(cards[i].dataset.state === "unflipped")
+		cards[i].classList.remove('flip');
+		
 	}
 }
 
@@ -221,7 +217,7 @@ function readFlip () {
         log("flipped state " + cards[i].dataset.state );
     }
 }
-
+// flips cards to reveal image
 function flipCard()
 {
   if (lockBoard)
@@ -247,7 +243,7 @@ function flipCard()
   checkForMatch();
    addMove();
 }
-
+// checks to see if both images match
 function checkForMatch() {
   let isMatch = (firstCard.dataset.framework === secondCard.dataset.framework);
 	log("Datasets first " + firstCard.parentElement + " second  " + secondCard.parentElement);
@@ -305,7 +301,7 @@ function resetBoard() {
 })();
 
 
-
+// adds move to counter
 function addMove() {
     movesCount++;
     log(moves.innerHTML + " Adding " + movesCount + " to " + moves);
@@ -313,26 +309,12 @@ function addMove() {
 
 }
 
-
-
 function log(textToLog)
 {
 	if(debug)
 		console.log(textToLog);
 }
 
-function initGame()
-{
-    //unflipCards();
-    hasFlippedCard = false;
-	lockBoard = false;
-	timeStart = "";
-	matchCount= 0;
-	moves.innerHTML = 0;
-    resetPlay();
-    resetBoard();
-	log("Staring new Game");
-}
 
 // GAME OVER
 function gameOver() {
@@ -349,7 +331,7 @@ function closeModal() {
    
 	log("Closing Model");
     	modal.style.display = 'none'; //element will not be displayed 
-	initGame();
+	;
 }
 
 
@@ -360,9 +342,7 @@ function openModal() {
     totalGameMoves.innerHTML = movesCount +1;
 }
 
-
-
-
+// game timer 
 function startTimer() {
     if (resetGame == true) {
         let timer = 0;
@@ -401,9 +381,7 @@ function stopTimer() {
     timeStart = '';
 }
 
-
-
-
+//resets
 function resetPlay() {
     stopTimer();
     resetTimer();

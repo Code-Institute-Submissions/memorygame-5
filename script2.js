@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.memory-card');
 
 let debug=true;
+let cardState = [];
 let shuffleOn=true;
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -13,7 +14,6 @@ let totalGameMovesElement = document.getElementById('totalGameMoves');
 let moves = document.getElementsByClassName('.moves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
 let timer = document.getElementById('timer')
-let finalStarRatingElement = document.getElementById('finalStarRating');
 let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
 let movesCount = 0;
@@ -24,9 +24,7 @@ let fruitCollection = [ "banana","banana","apple","apple","avocado",
 			 "avocado","grapes","grapes","pinapple","pinapple","strawberry","strawberry", 
              "watermelon","watermelon", "lemon","lemon"];
 	
-
-
-
+	
 
 //Add Event Listners 
 
@@ -37,7 +35,7 @@ if(cards)
 else
 	log("Cards not defined");
 
-initGame()
+
 
 function assignClickListner(element,func)
 {
@@ -67,7 +65,7 @@ function assignPictures()
 
 }
 
-
+// retrieves images and randomly allocates them to the game board
 function getImagesCollection()
 {
 
@@ -96,21 +94,6 @@ function IsNumberAllocated(number)
 	return false;
 }
 
-
-//sets the source png for an image, also sets the alt and dataset to same name
-function setImageSources()
-{
-	for (var i = 0; i < imagesAllocation.length; i++) {
-		let index = imagesAllocation[i] -1;
-		//log("Index " + index + " dog " + fruitdogsCollection[index]);
-		imagesCollection[i].src="../img/" + fruitCollection[index] + ".png";
-		imagesCollection[i].alt= fruitCollection[index];
-		imagesCollection[i].parentElement.dataset.framework = fruitCollection[index] ;	
-		log("Assigning " + fruitCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
-	}
-	return false;
-}
-
 function shuffleImages()
 {
 	let randomPos=0
@@ -118,7 +101,7 @@ function shuffleImages()
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		do
 		{
-			randomPos = Math.floor(Math.random() * 17);
+			randomPos = Math.floor(Math.random() * 13);
 	
 			//log("randomPos = " + randomPos);
 			attempts++;
@@ -137,13 +120,57 @@ function shuffleImages()
 
 
 function shuffleImagesTest()
-
 {
 	let randomPos=0
 	let attempts=0;
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		imagesAllocation[i] = i+1;
 		log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
+	}
+}
+
+
+
+//sets the source png for an image, also sets the alt and dataset to same name
+function setImageSources()
+{
+	for (var i = 0; i < imagesAllocation.length; i++) {
+		let index = imagesAllocation[i] -1;
+		//log("Index " + index + " fruit" + fruitCollection[index]);
+		imagesCollection[i].src="../img/" + fruitCollection[index] + ".png";
+		imagesCollection[i].alt= fruitCollection[index];
+		imagesCollection[i].parentElement.dataset.framework = fruitCollection[index] ;	
+		log("Assigning " + fruitCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
+	}
+	return false;
+}
+
+ function unflipCards() {
+    for (var i = 0; i < cards.length; i++) 
+        {
+		
+		cards[i].classList.remove('flip');
+		
+	}
+}
+
+// flashes cards for 600 milliseconds to give game player a hint
+function hint() {
+    for (var i = 0; i < cards.length; i++) {
+          if(cards[i].dataset.state === "unflipped")
+		  cards[i].classList.add('flip');
+}
+setTimeout(hide, 600)
+}
+
+
+function hide()
+{
+
+	for (var i = 0; i < cards.length; i++) {
+		if(cards[i].dataset.state === "unflipped")
+		cards[i].classList.remove('flip');
+		
 	}
 }
 
@@ -187,7 +214,12 @@ function restoreCards()
 ;
 }
 
-
+function readFlip () {
+    for (var i = 0; i < cards.length; i++) {
+        log("flipped state " + cards[i].dataset.state );
+    }
+}
+// flips cards to reveal image
 function flipCard()
 {
   if (lockBoard)
@@ -213,7 +245,7 @@ function flipCard()
   checkForMatch();
    addMove();
 }
-
+// checks to see if both images match
 function checkForMatch() {
   let isMatch = (firstCard.dataset.framework === secondCard.dataset.framework);
 	log("Datasets first " + firstCard.parentElement + " second  " + secondCard.parentElement);
@@ -243,6 +275,8 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+  firstCard.dataset.state= "flipped";
+  secondCard.dataset.state= "flipped";
 
   resetBoard();
 }
@@ -269,7 +303,7 @@ function resetBoard() {
 })();
 
 
-
+// adds move to counter
 function addMove() {
     movesCount++;
     log(moves.innerHTML + " Adding " + movesCount + " to " + moves);
@@ -277,26 +311,12 @@ function addMove() {
 
 }
 
-
-
 function log(textToLog)
 {
 	if(debug)
 		console.log(textToLog);
 }
 
-function initGame()
-{
-    //unflipCards();
-    hasFlippedCard = false;
-	lockBoard = false;
-	timeStart = "";
-	matchCount= 0;
-	moves.innerHTML = 0;
-    resetPlay();
-    resetBoard();
-	log("Staring new Game");
-}
 
 // GAME OVER
 function gameOver() {
@@ -313,7 +333,7 @@ function closeModal() {
    
 	log("Closing Model");
     	modal.style.display = 'none'; //element will not be displayed 
-	initGame();
+	;
 }
 
 
@@ -324,9 +344,7 @@ function openModal() {
     totalGameMoves.innerHTML = movesCount +1;
 }
 
-
-
-
+// game timer 
 function startTimer() {
     if (resetGame == true) {
         let timer = 0;
@@ -365,9 +383,7 @@ function stopTimer() {
     timeStart = '';
 }
 
-
-
-
+//resets
 function resetPlay() {
     stopTimer();
     resetTimer();

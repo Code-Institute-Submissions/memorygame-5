@@ -16,6 +16,11 @@ h1 {
     color: white;
 }
 
+.btn-level-2 {
+    background-color: yellow;
+    color:tomato;
+}
+
 .grid{
     margin: 0 auto;
     width: 80vw;
@@ -29,13 +34,16 @@ h1 {
     display: flex;
 }
 .box {
-    background: turquoise;
+    background: white;
+    box-shadow: 0 0 10px;
     margin: 5px;
     color: white;
     font-weight: bold;
     flex: 1 0 auto;
     position: relative;
 }
+
+
 .box:after {
     content: "";
     float:left;
@@ -89,7 +97,7 @@ img {
     text-align: center;
 }
 
-.btn{
+.btn-level-1{
     background-color: turquoise;
 }  
 

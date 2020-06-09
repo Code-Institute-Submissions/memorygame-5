@@ -341,6 +341,10 @@ function openModal() {
     totalGameTimeElement.innerHTML = elaspedTime;
     totalGameMoves.innerHTML = movesCount +1;
 }
+//how to play instructions modal
+function help () {
+    $('#myModal').modal('show')
+}
 
 // game timer 
 function startTimer() {

@@ -1,7 +1,7 @@
 
 body {
    
-    background: linear-gradient(rgb(235, 148, 235),rgb(192, 192, 243),rgb(196, 235, 181));
+    background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
     height: 100vh;
 }
 
@@ -43,7 +43,13 @@ h1 {
     position: relative;
 }
 
+i {
+    color: white;
+}
 
+.fa {
+    font-size: medium;
+}
 .box:after {
     content: "";
     float:left;
@@ -98,7 +104,7 @@ img {
 }
 
 .btn-level-1{
-    background-color: turquoise;
+    background-color: #dc9ceb;
 }  
 
 .welcome-box {
@@ -131,19 +137,18 @@ img {
 
 .scoreboard .moves {
     font-size: 30px;
-    color: turquoise;
     margin-right: auto;
 }
 
 .scoreboard .move {
     font-size: 30px;
-    color: pink;
+    color: white;
     margin-left: 10px;
 }
 
 .scoreboard .Time {
     font-size: 30px;
-    color: pink;
+    color: white;
     margin-left: 1em;
 }
 
@@ -157,11 +162,11 @@ img {
     width: 100%;
     margin: auto;
     overflow: hidden;
-    background-color: pink;
+    background-color: white;
 }
 
 .modal-content {
-    background-color: rgb(196, 235, 181);
+    background-color: rgb(49, 223, 253);
     /*margin: 30% auto;*/
     width: 40%;
     margin: auto;
@@ -177,9 +182,9 @@ img {
 }
 
 .modal-header {
-    background: turquoise;
+    background: rgb(249, 250, 252);
     padding: 15px;
-    color: #f4f4f4;
+    color: rgb(49, 223, 253);
     text-align: center;
 }
 
@@ -189,17 +194,16 @@ img {
 
 .modal-footer {
     
-    background: lavender;
+    background: rgb(49, 223, 253);lavender;
     padding: 10px;
     color: #f4f4f4;
     text-align: center;
 }
 
 .closeBtn {
-    color: rgb(46, 21, 92);
+    color: white;
     float: right;
     font-size: 30px;
-    color: pink;
 }
 
 .closeBtn:hover,
@@ -209,6 +213,15 @@ img {
     cursor: pointer;
 }
 
+/* How to Play Modal */
+.modal-body .help-tips {
+    padding: 0 1.5em;
+}
+
+.show-modal {
+    display: block;
+}
+
 .moves, .timer {
     color:aliceblue;
     font-size: 30px;
@@ -216,4 +229,13 @@ img {
 .show {
     backface-visibility: visible;
     animation: animateShowImage 0.4s linear alternate;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .modal-content
+    {width: 80%}
+    /* How to Play Modal */
+    .modal-body .help-tips {
+        padding: 0 2em;
+    }
 }

@@ -1,3 +1,14 @@
+const helpModal = document.getElementById('helpModal');
+function openHelpModal() {
+    helpModal.classList.add('show-modal');
+    log("show modal test")
+}
+
+function closeHelpModal() {
+    helpModal.classList.remove('show-modal');
+}
+
+
 const cards = document.querySelectorAll('.memory-card');
 
 let debug=true;
@@ -152,7 +163,8 @@ function setImageSources()
 	}
 }
 
-// flashes cards for 600 milliseconds to give game player a hint
+// flashes cards for 600 milliseconds to give game player a 
+
 function hint() {
     for (var i = 0; i < cards.length; i++) {
           if(cards[i].dataset.state === "unflipped")
@@ -340,10 +352,6 @@ function openModal() {
 
     totalGameTimeElement.innerHTML = elaspedTime;
     totalGameMoves.innerHTML = movesCount +1;
-}
-//how to play instructions modal
-function help () {
-    $('#myModal').modal('show')
 }
 
 // game timer 

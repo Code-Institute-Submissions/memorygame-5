@@ -13,7 +13,7 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-12 text-center mt-3">
-									<h1>FLIPCARD</h1><i class="fa fa-question-circle" onclick="help()" aria-hidden="true"></i>
+									<h1>FLIPCARD</h1><i class="fa fa-question-circle" onclick="openHelpModal()" aria-hidden="true"></i>
 								</div>
 							</div>
 						</div>
@@ -27,9 +27,10 @@
 							</div>
 						</section>
 						<section class="center mt-3">
-							<a href="home.html" class="btn btn-level-1 btn-lg ml-1">How to Play</a>
-							<a onclick="hint()" class="btn btn-level-1 btn-lg ml-1">Hint</a>
-							<a href="level1.html" class="btn btn-level-1 btn-lg ml-1">Restart Game</a>
+                            <a href="level1.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Restart</a>
+                            <a onclick="hint()" class="btn btn-level-1 btn-lg ml-1 mb-1">Hint</a>
+                            <a href="level2.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Level 2</a>
+							
 						</section>
 						<div class="grid mt-4">
 							<div class="row">
@@ -133,23 +134,21 @@
 								</div>
 							</div>
 						</div>
-                        <div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" id="myModal">
-      <div class="modal-header">
-        <h5 class="modal-title">How To Play</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat or time or try the harder level!</p>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-						<script src="script.js"></script>
+                        <div class="modal" id="helpModal">
+            <div class="modal-content">
+                <span aria-label="close" role="button" class="close" onClick="closeHelpModal()">&times;</span>
+                <div class="modal-body">
+                    <div class="help-tips">
+                        <h2>How to Play</h2>
+                        <p>The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="brown-button" onClick="closeHelpModal()">Close</button>
+                </div>
+            </div>
+        </div>
+                        
+						<script src="commonjs.js"></script>
 					</body>
 </html>	

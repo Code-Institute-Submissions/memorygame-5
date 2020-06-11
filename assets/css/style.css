@@ -158,54 +158,23 @@ img {
     margin-left: 1em;
 }
 
-//modal 
-/*
 .modal {
-    position:absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
     display: none;
-    z-index: 1;
-    top:100px;
     width: 100%;
-    margin: auto;
+    height: 100%;
     overflow: hidden;
-    background-color: white;
-    
+    outline: 0;
+    color: black;
 }
 
-.modal-content {
-    background-color: rgb(49, 223, 253);
-    /*margin: 30% auto;
-    width: 40%;
-    margin: auto;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-    animation-name: modalopen;
-    animation-duration: 3s;
-    text-align: center;
-}
 
-.modal-header h2,
-.modal-footer h3 {
-    margin: 0;
-}
 
-.modal-header {
-    background: rgb(249, 250, 252);
-    padding: 15px;
-    color: rgb(49, 223, 253);
-    text-align: center;
-}
 
-.modal-body {
-    padding: 10px 20px;
-}
 
-.modal-footer {
-    
-    background: rgb(49, 223, 253);lavender;
-    padding: 10px;
-    color: #f4f4f4;
-    text-align: center;
-}
 
 .closeBtn {
     color: white;
@@ -218,12 +187,8 @@ img {
     color: white;
     text-decoration: none;
     cursor: pointer;
-}*/
-
-/* How to Play Modal */
-.modal-body .help-tips {
-    padding: 0 1.5em;
 }
+
 
 .show-modal {
     display: block;
@@ -238,68 +203,3 @@ img {
     animation: animateShowImage 0.4s linear alternate;
 }
 
-/*@media only screen and (min-width: 600px) and (max-width: 767px) {
-    .modal-dialog {
-    width: 400px;
-}
-    How to Play Modal 
-    .modal-body .help-tips {
-        padding: 0 2em;
-    }
-}*/
-
-.modal{
-  display:none;
-  background:rgba(0, 0, 0, .8);
-  position:fixed;
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-}
-.modal:target{
-  display:table;
-}
-.modal-dialog{
-  display:table-cell;
-  vertical-align:middle;
-}
-
-.modal-content{
-  background:rgb(255, 255, 255);
-  width:60%;
-  min-width:300px;
-  margin:auto;
-  position:relative;
-  
-  animation: slideUp 0.3s ease-in-out;
-}
-
-.modal-header{
-  background:#2980b9;
-  color:rgba(255, 255, 255, 0.8);
-  padding:1rem;
-  position:relative;
-}
-.modal-title{
-  margin:0;
-}
-.modal-close{
-  color:#fff;
-  text-decoration: none;
-  position:absolute;
-  top:1rem;
-  right:1rem;
-}
-.modal-image{
-  display:block;
-  margin:1rem auto;
-}
-.modal-text{
-  padding:0 1rem;
-  line-height:1.5;
-}
-.modal-footer{
-  padding:1rem;
-  border-top:1px solid #ccc;
-}

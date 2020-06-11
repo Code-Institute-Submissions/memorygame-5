@@ -155,8 +155,7 @@ function shuffleImages()
 
 function shuffleImagesTest()
 {
-	let randomPos=0
-	let attempts=0;
+
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		imagesAllocation[i] = i+1;
 		//log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
@@ -288,7 +287,7 @@ function checkForMatch() {
  { 
      disableCards();
      matchCount = matchCount +1
-     if(matchCount >= subjectCollection.length. i++)
+      if(matchCount >= (subjectCollection.length/2))
      {
         gameOver();
         log("game over")

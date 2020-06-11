@@ -1,205 +1,154 @@
-
+/*backgrounds*/
 body {
-   
-    background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
-    height: 100vh;
+     background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
+     height: 100vh;
 }
-
-.fruitbackg {
-    background: linear-gradient(rgb(255, 26, 0),rgb(255, 141, 65),rgb(255, 211, 0));
-    height: 100vh;
+ .fruitbackg {
+     background: linear-gradient(rgb(255, 26, 0),rgb(255, 141, 65),rgb(255, 211, 0));
+     height: 100vh;
 }
-
-h1 {
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: xx-large;
-    color: white;
+/*Fonts*/
+ h1 {
+     font-family: 'Balsamiq Sans', cursive;
+     font-size: xx-large;
+     color: white;
 }
-
-a:not([href]) {
-    color:grey;
-    text-decoration: none;
+ .center {
+     text-align: center;
 }
-
-.btn-level-2 {
-    background-color: yellow;
-    color:grey;
+/*Buttons and Links*/
+ a:not([href]) {
+     color:grey;
+     text-decoration: none;
 }
-
-.grid{
-    margin: 0 auto;
-    width: 80vw;
-    max-width: 60vh;
-    height: 80vw;
-    max-height: 60vh;
-    font-size: 1rem;
-    perspective: 1000px;
+ .btn-level-2 {
+     background-color: yellow;
+     color:grey;
 }
-.row {
-    display: flex;
+ .btn-level-1{
+     background-color: #dc9ceb;
+     color: grey;
 }
-.box {
-    background: white;
-    box-shadow: 0 0 10px;
-    margin: 5px;
-    color: white;
-    font-weight: bold;
-    flex: 1 0 auto;
-    position: relative;
+ .btn-modal {
+     background-color: lightcyan;
 }
-
-i {
-    color: white;
+ i {
+     color: white;
 }
-
-.fa {
-    font-size: medium;
+ .fa {
+     font-size: medium;
 }
-.box:after {
-    content: "";
-    float:left;
-    display: block;
-    padding-top: 100%;
+/*Gameboard and Cards*/
+ .grid{
+     margin: 0 auto;
+     width: 80vw;
+     max-width: 60vh;
+     height: 80vw;
+     max-height: 60vh;
+     font-size: 1rem;
+     perspective: 1000px;
 }
-.memory-card {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform .5s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+ .row {
+     display: flex;
 }
-
-.memory-card:active {
-  transform: scale(0.97);
-  transition: transform .2s;
+ .box {
+     background: white;
+     box-shadow: 0 0 10px;
+     margin: 5px;
+     color: white;
+     font-weight: bold;
+     flex: 1 0 auto;
+     position: relative;
 }
-
-.memory-card.flip {
-  transform: rotateY(180deg);
+ .box:after {
+     content: "";
+     float:left;
+     display: block;
+     padding-top: 100%;
 }
-
-img {
-    width: 100%;
-    height:auto;
+ .memory-card {
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     top: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transform: scale(1);
+     transform-style: preserve-3d;
+     transition: transform .5s;
+     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
-
-.front-face,
-.back-face {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-  position: absolute;
-  border-radius: 5px;
-  backface-visibility: hidden;
+ .memory-card:active {
+     transform: scale(0.97);
+     transition: transform .2s;
 }
-
-.front-face {
-  transform: rotateY(180deg);
+ .memory-card.flip {
+     transform: rotateY(180deg);
 }
-
-.center {
-    text-align: center;
+ img {
+     width: 100%;
+     height:auto;
 }
-
-.btn-level-1{
-    background-color: #dc9ceb;
-    color: grey;
-}  
-
-.welcome-box {
-    width: 75%;
-    max-width: 600px;
-    background: #87cce0;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 30px 40px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 0 20px #000000b3;
-    font-family: 'Balsamiq Sans', cursive;
-    margin-top: 25%;
+ .front-face, .back-face {
+     width: 100%;
+     height: 100%;
+     padding: 5px;
+     position: absolute;
+     border-radius: 5px;
+     backface-visibility: hidden;
 }
-
-.welcome-txt {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    color: blueviolet;
-    font-weight: 300;
+ .front-face {
+     transform: rotateY(180deg);
 }
-
-//score board
-
-
-.scoreboard .moves {
-    font-size: 30px;
-    margin-right: auto;
-}
-
-.scoreboard .move {
-    font-size: 30px;
-    color: white;
-    margin-left: 10px;
-}
-
-.scoreboard .Time {
-    font-size: 30px;
-    color: white;
-    margin-left: 1em;
-}
-
+/*Modal*/
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    outline: 0;
-    color: black;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1050;
+     display: none;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     outline: 0;
+     color: black;
+     text-align: center;
 }
-
-
-
-
-
-
-.closeBtn {
-    color: white;
-    float: right;
-    font-size: 30px;
+ .closeBtn {
+     color: white;
+     float: right;
+     font-size: 30px;
 }
-
-.closeBtn:hover,
-.closeBtn:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+ .closeBtn:hover, .closeBtn:focus {
+     color: white;
+     text-decoration: none;
+     cursor: pointer;
 }
-
-
-.show-modal {
-    display: block;
+ .show-modal {
+     display: block;
 }
-
-.moves, .timer {
-    color:aliceblue;
-    font-size: 30px;
+ .modal-footer {
+     text-align: center;
 }
-.show {
-    backface-visibility: visible;
-    animation: animateShowImage 0.4s linear alternate;
+/*ScoreBoard*/
+  .scoreboard .moves {
+     font-size: 30px;
+     margin-right: auto;
 }
-
+ .scoreboard .move {
+     font-size: 30px;
+     color: white;
+     margin-left: 10px;
+}
+ .scoreboard .Time {
+     font-size: 30px;
+     color: white;
+     margin-left: 1em;
+}
+ .moves, .timer {
+     color:aliceblue;
+     font-size: 30px;
+}
+ 

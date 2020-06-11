@@ -1,101 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>FLIPCARD</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body class="fruitbackg">
-    <div class="container-fluid">
-        <div class="row">
+   <head>
+      <title>FLIPCARD</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+      <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+      <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+   </head>
+   <body class="fruitbackg">
+      <div class="container-fluid">
+         <div class="row">
             <div class="col-12 text-center mt-3">
-            <h1>FLIPCARD</h1><i class="fa fa-question-circle" onclick="openHelpModal()" aria-hidden="true"></i>
+               <h1>FLIPCARD</h1>
+               <i class="fa fa-question-circle" onclick="openHelpModal()" aria-hidden="true"></i>
             </div>
-        </div>
-    </div>
-    <section>
-        <div class="scoreboard center">
-      <span class="move">Moves</span>
-      <span class="moves">0</span>
-      <!--timer-->
-      <span class="Time">Time</span>
-      <span class="timer">0:00</span>
-        </div>
-    </section>
-
-<section class="center mt-2">
-<a href="level2.html" class="btn btn-lg btn-level-2 ml-1">Restart</a><a onclick="hint()" class="btn btn-level-2 btn-lg ml-1">Hint</a><a href="level1.html" class="btn btn-lg btn-level-2 ml-1">Level 1</a>
-</section>
-<section>
-   <div class="grid mt-4">
-    <div class="row">
-        <div class="box"><div class="memory-card" data-framework="grapes" data-state="unflipped"><img id ="img1" class="front-face" src="../img/grapes.png" alt="grapes" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="strawberry" data-state="unflipped"><img id="img2" class="front-face" src="../img/strawberry.png" alt="strawberry" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="watermelon" data-state="unflipped"><img id="img3" class="front-face" src="../img/watermelon.png" alt="watermelon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="banana" data-state="unflipped"><img id="img4" class="front-face" src="../img/banana.png" alt="banana" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>  
-    </div>
-    <div class="row">
-        <div class="box"><div class="memory-card" data-framework="lemon" data-state="unflipped"><img id="img5" class="front-face" src="../img/lemon.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="pinapple" data-state="unflipped"><img id="img6" class="front-face" src="../img/pinapple.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="lemon" data-state="unflipped"><img id="img7" class="front-face" src="../img/lemon.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="pinapple" data-state="unflipped"><img id="img8" class="front-face" src="../img/pinapple.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-       
-    </div>
-    <div class="row">
-        <div class="box"><div class="memory-card" data-framework="grapes" data-state="unflipped"><img id="img9" class="front-face" src="../img/grapes.png" alt="grapes" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="strawberry" data-state="unflipped"><img id="img10" class="front-face" src="../img/strawberry.png" alt="strawberry" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="watermelon" data-state="unflipped"><img id="img11" class="front-face" src="../img/watermelon.png" alt="watermelon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="banana" data-state="unflipped"><img id="img12" class="front-face" src="../img/banana.png" alt="banana" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>      
-    </div>
-    <div class="row">
-        <div class="box"><div class="memory-card" data-framework="apple" data-state="unflipped"><img id="img13" class="front-face" src="../img/apple.png" alt="apple" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="avocado" data-state="unflipped"><img id="img14" class="front-face" src="../img/avocado.png" alt="avocado" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="apple" data-state="unflipped"><img id="img15" class="front-face" src="../img/apple.png" alt="apple" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>
-        <div class="box"><div class="memory-card" data-framework="avocado" data-state="unflipped"><img id="img16" class="front-face" src="../img/avocado.png" alt="avocado" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div></div>  
-    </div>
-   </div>    
-</section>
-
- <!--Modal on game over -->
-        <div class="modal" id="levelCompleteModal">
+         </div>
+      </div>
+      <section>
+         <div class="scoreboard center">
+            <span class="move">Moves</span>
+            <span class="moves">0</span>
+            <!--timer-->
+            <span class="Time">Time</span>
+            <span class="timer">0:00</span>
+         </div>
+      </section>
+      <section class="center mt-2">
+         <a href="level2.html" class="btn btn-lg btn-level-2 ml-1">Restart</a><a onclick="hint()" class="btn btn-level-2 btn-lg ml-1">Hint</a><a href="index.html" class="btn btn-lg btn-level-2 ml-1">Level 1</a>
+      </section>
+      <section>
+         <div class="grid mt-2">
+            <div class="row">
+               <div class="box">
+                  <div class="memory-card" data-framework="grapes" data-state="unflipped"><img id ="img1" class="front-face" src="../img/grapes.png" alt="grapes" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="strawberry" data-state="unflipped"><img id="img2" class="front-face" src="../img/strawberry.png" alt="strawberry" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="watermelon" data-state="unflipped"><img id="img3" class="front-face" src="../img/watermelon.png" alt="watermelon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="banana" data-state="unflipped"><img id="img4" class="front-face" src="../img/banana.png" alt="banana" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="box">
+                  <div class="memory-card" data-framework="lemon" data-state="unflipped"><img id="img5" class="front-face" src="../img/lemon.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="pinapple" data-state="unflipped"><img id="img6" class="front-face" src="../img/pinapple.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="lemon" data-state="unflipped"><img id="img7" class="front-face" src="../img/lemon.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="pinapple" data-state="unflipped"><img id="img8" class="front-face" src="../img/pinapple.png" alt="lemon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="box">
+                  <div class="memory-card" data-framework="grapes" data-state="unflipped"><img id="img9" class="front-face" src="../img/grapes.png" alt="grapes" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="strawberry" data-state="unflipped"><img id="img10" class="front-face" src="../img/strawberry.png" alt="strawberry" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="watermelon" data-state="unflipped"><img id="img11" class="front-face" src="../img/watermelon.png" alt="watermelon" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="banana" data-state="unflipped"><img id="img12" class="front-face" src="../img/banana.png" alt="banana" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="box">
+                  <div class="memory-card" data-framework="apple" data-state="unflipped"><img id="img13" class="front-face" src="../img/apple.png" alt="apple" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="avocado" data-state="unflipped"><img id="img14" class="front-face" src="../img/avocado.png" alt="avocado" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="apple" data-state="unflipped"><img id="img15" class="front-face" src="../img/apple.png" alt="apple" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+               <div class="box">
+                  <div class="memory-card" data-framework="avocado" data-state="unflipped"><img id="img16" class="front-face" src="../img/avocado.png" alt="avocado" /><img class="back-face" src="../img/backface2.png" alt="blank" /></div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--Modal on game over -->
+      <div class="modal" id="levelCompleteModal">
+         <div class="modal-dialog modal-sm">
             <div class="modal-content">
-                <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
-                <div class="modal-header">
-                    <h2 class="center">Game Over</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="message">
-                        <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
-                        <p>You completed the game using <span id="totalGameMoves"></span> moves! <br>in <span id="totalGameTime"></span>
-                        </p>
-                        <a href="level1.html" class="btn btn-lg btn-level-2 mr-2">LEVEL 1</a><a href="level2.html" class="btn btn-lg btn-level-2">LEVEL 2</a>
-                    </div>
-                </div>
-
+               <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
+               <div class="modal-header">
+                  <h2 class="center">Game Over</h2>
+               </div>
+               <div class="modal-body">
+                  <div class="message">
+                     <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
+                     <p>You completed the game using <span id="totalGameMoves"></span> moves! <br>in <span id="totalGameTime"></span>
+                     </p>
+                     <a href="index.html" class="btn btn-lg btn-level-2 mr-2">LEVEL 1</a><a href="level2.html" class="btn btn-lg btn-level-2">LEVEL 2</a>
+                  </div>
+               </div>
             </div>
-        </div>
-         <div class="modal" id="helpModal">
+         </div>
+      </div>
+      <div class="modal" id="helpModal">
+         <div class="modal-dialog modal-sm">
             <div class="modal-content">
-                <span aria-label="close" role="button" class="close" onclick="closeHelpModal()">&times;</span>
-                <div class="modal-body">
-                    <div class="help-tips">
-                        <h2>How to Play</h2>
-                        <p>The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="brown-button" onclick="closeHelpModal()">Close</button>
-                </div>
+               <div class="modal-header">
+                  <span aria-label="close" role="button" class="close" onclick="closeHelpModal()">&times;</span>
+               </div>
+               <div class="modal-body">
+                  <h2>How to Play</h2>
+                  <p>The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!</p>
+               </div>
+               <div class="modal-footer">
+                  <input class="btn btn-sm btn-modal" onclick="closeHelpModal()" value="Close">
+               </div>
             </div>
-        </div>
-
-
-<script src="commonjs.js"></script>
-</body>
-
+         </div>
+      </div>
+      <script src="script.js"></script>
+   </body>
 </html>

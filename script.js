@@ -8,7 +8,6 @@ function closeHelpModal() {
     helpModal.classList.remove('show-modal');
 }
 
-
 const cards = document.querySelectorAll('.memory-card');
 
 let debug=true;
@@ -31,9 +30,35 @@ let movesCount = 0;
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
 let imagesCollection = [];
 let imagesAllocation = [];
+let level = document.getElementById('level1');
+
 let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
-			 "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
-	
+       "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
+
+let fruitCollection = [ "banana","banana","apple","apple","avocado",
+			 "avocado","grapes","grapes","pinapple","pinapple","strawberry","strawberry", 
+             "watermelon","watermelon", "lemon","lemon"];	
+let subjectCollection = [];
+log("Level " + level);
+if(level)
+  subjectCollection = dogsCollection;             
+ else
+   subjectCollection = fruitCollection;   
+validateElement(moves);
+
+function validateElement(elementName)
+{
+
+  if(elementName)
+  {
+
+  }
+  else
+  {
+    log("ERROR: Element " + elementName + " is not defined");
+  }
+
+}
 
 //Add Event Listners 
 
@@ -66,11 +91,11 @@ function assignPictures()
 
 	getImagesCollection();
 	clearImagesAllocation();
-	logImagesCollection();
+	//logImagesCollection();
 	//shuffleImages();
 	shuffleImagesTest();
 	setImageSources();
-	logImagesCollection();
+	//logImagesCollection();
 
 }
 
@@ -123,18 +148,17 @@ function shuffleImages()
 		while (IsNumberAllocated(randomPos))
 		attempts = 0;
 		imagesAllocation[i] = randomPos;
-		log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
+		//log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
 	}
 }
 
 
 function shuffleImagesTest()
 {
-	let randomPos=0
-	let attempts=0;
+
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		imagesAllocation[i] = i+1;
-		log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
+		//log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
 	}
 }
 
@@ -145,11 +169,11 @@ function setImageSources()
 {
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		let index = imagesAllocation[i] -1;
-		//log("Index " + index + " dog " + dogsCollection[index]);
-		imagesCollection[i].src="../img/" + dogsCollection[index] + ".png";
-		imagesCollection[i].alt= dogsCollection[index];
-		imagesCollection[i].parentElement.dataset.framework = dogsCollection[index] ;	
-		log("Assigning " + dogsCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
+		//log("Index " + index + " dog " + subjectCollection[index]);
+		imagesCollection[i].src="../img/" + subjectCollection[index] + ".png";
+		imagesCollection[i].alt= subjectCollection[index];
+		imagesCollection[i].parentElement.dataset.framework = subjectCollection[index] ;	
+		//log("Assigning " + subjectCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
 	}
 	return false;
 }
@@ -163,9 +187,9 @@ function setImageSources()
 	}
 }
 
-// flashes cards for 600 milliseconds to give game player a 
-
+// flashes cards for 600 milliseconds to give game player a hint
 function hint() {
+    log("Hint function:");
     for (var i = 0; i < cards.length; i++) {
           if(cards[i].dataset.state === "unflipped")
 		  cards[i].classList.add('flip');
@@ -263,7 +287,7 @@ function checkForMatch() {
  { 
      disableCards();
      matchCount = matchCount +1
-     if(matchCount >= 6)
+      if(matchCount >= (subjectCollection.length/2))
      {
         gameOver();
         log("game over")
@@ -353,6 +377,7 @@ function openModal() {
     totalGameTimeElement.innerHTML = elaspedTime;
     totalGameMoves.innerHTML = movesCount +1;
 }
+
 
 // game timer 
 function startTimer() {

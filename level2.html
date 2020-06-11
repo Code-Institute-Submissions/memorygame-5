@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 text-center mt-3">
-            <h1>FLIPCARD</h1>
+            <h1>FLIPCARD</h1><i class="fa fa-question-circle" onclick="openHelpModal()" aria-hidden="true"></i>
             </div>
         </div>
     </div>
@@ -28,8 +28,8 @@
         </div>
     </section>
 
-<section class="center mt-3">
-<a href="home.html" class="btn btn-lg btn-level-2 ml-1">How to Play</a><a onclick="hint()" class="btn btn-level-2 btn-lg ml-1">Hint</a><a href="level2.html" class="btn btn-lg btn-level-2 ml-1">Restart Game</a>
+<section class="center mt-2">
+<a href="level2.html" class="btn btn-lg btn-level-2 ml-1">Restart</a><a onclick="hint()" class="btn btn-level-2 btn-lg ml-1">Hint</a><a href="level1.html" class="btn btn-lg btn-level-2 ml-1">Level 1</a>
 </section>
 <section>
    <div class="grid mt-4">
@@ -77,6 +77,20 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+         <div class="modal" id="helpModal">
+            <div class="modal-content">
+                <span aria-label="close" role="button" class="close" onClick="closeHelpModal()">&times;</span>
+                <div class="modal-body">
+                    <div class="help-tips">
+                        <h2>How to Play</h2>
+                        <p>The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="brown-button" onClick="closeHelpModal()">Close</button>
+                </div>
             </div>
         </div>
 

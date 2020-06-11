@@ -1,4 +1,12 @@
+const helpModal = document.getElementById('helpModal');
+function openHelpModal() {
+    helpModal.classList.add('show-modal');
+    log("show modal test")
+}
 
+function closeHelpModal() {
+    helpModal.classList.remove('show-modal');
+}
 
 const cards = document.querySelectorAll('.memory-card');
 

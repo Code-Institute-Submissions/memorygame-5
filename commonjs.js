@@ -1,3 +1,5 @@
+
+
 const cards = document.querySelectorAll('.memory-card');
 
 let debug=true;
@@ -278,7 +280,7 @@ function checkForMatch() {
  { 
      disableCards();
      matchCount = matchCount +1
-     if(matchCount >= 6)
+     if(matchCount >= subjectCollection.length. i++)
      {
         gameOver();
         log("game over")

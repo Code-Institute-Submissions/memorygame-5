@@ -170,7 +170,7 @@ function setImageSources()
 	for (var i = 0; i < imagesAllocation.length; i++) {
 		let index = imagesAllocation[i] -1;
 		//log("Index " + index + " dog " + subjectCollection[index]);
-		imagesCollection[i].src="../img/" + subjectCollection[index] + ".png";
+		imagesCollection[i].src="assets/img/" + subjectCollection[index] + ".png";
 		imagesCollection[i].alt= subjectCollection[index];
 		imagesCollection[i].parentElement.dataset.framework = subjectCollection[index] ;	
 		//log("Assigning " + subjectCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );

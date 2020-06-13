@@ -8,6 +8,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
       <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
    </head>
+    <!--Background and Heading Section-->
    <body class="fruitbackg">
       <div class="container-fluid">
          <div class="row">
@@ -17,6 +18,7 @@
             </div>
          </div>
       </div>
+       <!--Scoreboard Section-->
       <section>
          <div class="scoreboard center">
             <span class="move">Moves</span>
@@ -26,9 +28,11 @@
             <span class="timer">0:00</span>
          </div>
       </section>
+       <!--Navigation Buttons Section-->
       <section class="center mt-2">
-         <a href="level2.html" class="btn btn-lg btn-level-2 ml-1">Restart</a><a onclick="hint()" class="btn btn-level-2 btn-lg ml-1">Hint</a><a href="index.html" class="btn btn-lg btn-level-2 ml-1">Level 1</a>
+         <a href="img.html" class="btn btn-lg btn-level-2 ml-1">Restart</a><a onclick="hint()" class="btn btn-level-2 btn-lg ml-1">Hint</a><a href="index.html" class="btn btn-lg btn-level-2 ml-1">Level 1</a>
       </section>
+       <!--Gameboard Section-->
       <section>
          <div class="grid mt-2">
             <div class="row">
@@ -102,12 +106,13 @@
                      <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
                      <p>You completed the game using <span id="totalGameMoves"></span> moves! <br>in <span id="totalGameTime"></span>
                      </p>
-                     <a href="index.html" class="btn btn-lg btn-level-2 mr-2">LEVEL 1</a><a href="level2.html" class="btn btn-lg btn-level-2">LEVEL 2</a>
+                     <a href="index.html" class="btn btn-lg btn-level-2 mr-2">LEVEL 1</a><a href="img.html" class="btn btn-lg btn-level-2">LEVEL 2</a>
                   </div>
                </div>
             </div>
          </div>
       </div>
+       <!--Help Modal-->
       <div class="modal" id="helpModal">
          <div class="modal-dialog modal-sm">
             <div class="modal-content">

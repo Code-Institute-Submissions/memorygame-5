@@ -1,9 +1,11 @@
+//Retrieves Help Modal 
 const helpModal = document.getElementById('helpModal');
 function openHelpModal() {
     helpModal.classList.add('show-modal');
     log("show modal test")
 }
 
+//closes help modal
 function closeHelpModal() {
     helpModal.classList.remove('show-modal');
 }
@@ -40,10 +42,12 @@ let fruitCollection = [ "banana","banana","apple","apple","avocado",
              "watermelon","watermelon", "lemon","lemon"];	
 let subjectCollection = [];
 log("Level " + level);
-if(level)
+if (level) {
   subjectCollection = dogsCollection;             
- else
-   subjectCollection = fruitCollection;   
+}else {
+   subjectCollection = fruitCollection; }
+
+//Test to see if element defined 
 validateElement(moves);
 
 function validateElement(elementName)
@@ -85,7 +89,7 @@ function assignClickListner(element,func)
 }
 
 //main game play
-
+// assigns images to cards randomly by using several functions
 function assignPictures()
 {
 
@@ -99,25 +103,25 @@ function assignPictures()
 
 }
 
-// retrieves images and randomly allocates them to the game board
+// retrieves images by collecting them from html
 function getImagesCollection()
 {
 
 	imagesCollection = document.querySelectorAll('img.front-face');
 	
 }
-
+// Allocates the retreived images to the game board
 function allocateImage(imageIndex,value)
 {
 	imagesAllocation[imageIndex] = value;
 }
 
-
+// sets the src of the image 
 function setImageSource(imageIndex,srcIndex)
 {
 	imagesCollection[imageIndex].src = srcsCollection[allocationIndex[srcIndex]];
 }
-
+// checks to see image hasn't already been allocated - so that only two of each image appears
 function IsNumberAllocated(number)
 {
 	for (var i = 0; i < imagesAllocation.length; i++) {
@@ -127,7 +131,7 @@ function IsNumberAllocated(number)
 	}
 	return false;
 }
-
+// shuffles images so they appear in random order
 function shuffleImages()
 {
 	let randomPos=0
@@ -152,7 +156,7 @@ function shuffleImages()
 	}
 }
 
-
+// images appear beside each other for testing
 function shuffleImagesTest()
 {
 
@@ -177,7 +181,7 @@ function setImageSources()
 	}
 	return false;
 }
-
+// removes the css class 'flip'
  function unflipCards() {
     for (var i = 0; i < cards.length; i++) 
         {
@@ -197,7 +201,7 @@ function hint() {
 setTimeout(hide, 600)
 }
 
-
+// allows cards to flash for hint for certain length of time
 function hide()
 {
 
@@ -247,7 +251,7 @@ function restoreCards()
 
 ;
 }
-
+// reads the dataset state of a card to allow hint function to flash unmatched cards
 function readFlip () {
     for (var i = 0; i < cards.length; i++) {
         log("flipped state " + cards[i].dataset.state );
@@ -305,7 +309,7 @@ function checkForMatch() {
  	log("Matched: " + isMatch);
 
 }
-
+// removes event listener from matched cards
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
@@ -344,7 +348,7 @@ function addMove() {
     document.querySelector(".moves").innerHTML = movesCount;
 
 }
-
+// testing function
 function log(textToLog)
 {
 	if(debug)
@@ -362,7 +366,7 @@ function gameOver() {
    
 }
 
-
+// allows game over modal to be closed
 function closeModal() {
    
 	log("Closing Model");
@@ -370,7 +374,7 @@ function closeModal() {
 	;
 }
 
-
+// allows game over modal to be opened
 function openModal() {
     modal.style.display = 'block'; // this is rendered as a block level element 
 
@@ -407,18 +411,18 @@ function startTimer() {
         }
     }
 }
-
+// allows timer to be reset for new game
 function resetTimer() {
     document.querySelector(".timer").innerHTML = '00:00';
     [hour, minute, second] = [0, 0, 0];
 }
-
+// stops times to allow total game time to be read
 function stopTimer() {
     clearInterval(timeStart); //clearInterval needs to use the variable from the setInterval 
     timeStart = '';
 }
 
-//resets
+//resets scoreboard
 function resetPlay() {
     stopTimer();
     resetTimer();
@@ -426,7 +430,7 @@ function resetPlay() {
     
 
 }
-
+//resets the move counter back to 0
 function resetMoves() {
     
     movesCount = 0;

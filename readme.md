@@ -1,32 +1,26 @@
 # Flipcard Memory Game Project
-This project is a memory game developed using HTML,CSS and Javascript. 
+This project is a simple game to test the users memory developed using HTML,CSS and Javascript. 
 
-Here is a link to the live website: [Yellow Door Coffee](https://jadeosull93.github.io/my-full-template/index.html)
+Here is a link to the live website: [FlipCard](https://jadeosull93.github.io/memory-game/index.html)
 ## UX
-The website was designed with ease of use for game players at the fore-front of the design. The website required clear navigation and ease of use; it needed to be informative and also visually engaging. The images used through-out the site are in-keeping with the style of the cafe and have been selected to give users some sense of the Yellow Door Coffee experience.
--	As a website user, I want clear navigation that stands out so that I can quickly visit the section that interests me.
--	As a website user, I want to see visual images that give me a sense of what the site is about.
--	As a customer, I want to see what variety of coffee  is available, so that I can make an informed decision what to order
--	As a customer, I want clear and precise details  of opening hours and location, so that I can get to the cafe easily and at the right time.
--	As a user of the site, I want to able to scroll through the different type  of coffee, so that I can see each type and not be overloaded with information. 
--	As a user of the site, I want to see pictures from the cafe, so I get a sense of what to expect and can make a judgmenet regarding if its somewhere i’d like to go or not.
--	As a website user, I want to see customer feedback, to see if it is inline with what the coffee shop is promising.
+The website was designed with ease of use for game players at the fore-front of the design. 
+-	As a website user, I want clear navigation so that I can quickly access what I need, i.e how to play or a different level.
+-	As a game player, I want to see bright eye-catching visual images which add to my experience.
+-	As a game player, I want to be able to see how I am doing in the game: how many moves i've made and how long it has taken me.
+-   As a game player, I want to be able to easily refresh the game at any time.
 
 ### Mock Ups
-I designed the mock ups for the site using Figma. Mock ups for the website can be found in the following [folder](https://github.com/Jadeosull93/my-full-template/blob/4d900eab99a37177798424604b32dbef81d0d404/mockups)
-
+I designed the mock ups for the site using Figma. Mock ups for the website can be found in the following [folder]()
+### How To Play
+The challenge is to match cards into pairs in the least time possible with the least moves. To play, you simply click on a card to reveal the image behind. You can flip two cards at a time and you must memorize the images in order to try and flip a pair. Once two cards are matched, they will remain flipped. Once all cards have been successfully flipped a modal will appear displaying the total moves and time. There will be an option to repeat the level or try a different level.
 ## Features
-Please find a list of features which are live on the website below: 
+Please find a list of features which are live on the web game below: 
 ### Existing Features
-The website has four pages: Home, Our Story, Our Coffee, Contact Details. Certain feautres are shared on all four pages while others are designed for each individual page. 
-*	The navbar  - allows users to achieve what section of the website to visit, by having them click on one of 4 options. 
-*	Order Now Section – this section allows users to select a coffee to pre-order on the website so it is ready to collection
-*	Meet The Team – the meet the team section allows users to hoover over each team member to bring up links to their social media accounts and get to know them better.
-*	Customer Reviews – will allow users see a small image of previous customers along with a rating out of 5 stars and a comment about the cafe
-*	Find Us Section – this section includes a google map sp the cafe can be easily located and also has contact details
-*	Contact Us form – the form allows customers to send a message to the cafe once the include their name and email address, customers will be notified if they have forgotten either field when they hit the send button
-*	Our Coffee – this page provides striking images of each of the coffee beans along with informative test about the different flavours of coffee from each area
-*	The footer also enables users to visit various social platforms that the cafe has online. 
+*	Restart Button  - allows users to restart/refresh the level they are on in one click.
+*   Hint Button - a function players can use if they are stuck which flashes cards to reveal images for 600 milliseconds.
+*   Level Button - a button which allows players change to the other level.
+
+
 ### Features Left to Implement
 The main feature left to implement is finsihing the Order Now section so that a module appears once a selection is made allowing the customer to complete their order. I hope to add this once I have completed the Javascript moule. I would also like to add animation through out the site, for example, making certain text move onto the page after an image has zoomed. 
 ## Technologies Used

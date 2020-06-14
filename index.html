@@ -8,9 +8,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
       <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
    </head>
-   <body onload="playAudio()">
-    <audio id="notifypop"> <!--Source the audio file. -->
-            <source src="FunAdventure.mp3" type="audio/mpeg">
+   <body>
+    <audio id="notifypop" src="FunAdventure.mp3" type="mpeg" loop="loop" autoplay="autoplay">
     </audio>
         <div class="container">
             <h1 class="landing-text center">FLIPCARD</h1>
@@ -24,7 +23,10 @@
                     <a role="button" onclick()="" class="btn btn-rounded btn-lg btn-how-to">START GAME</a>
                 </div>
                 <div class="col-12 text-center mt-4 pt-4">
-                    <a role="button" onclick()="" class="btn btn-rounded btn-lg btn-how-to"> SOUND OFF  </a>
+                    <a role="button" onclick="stopMusic()" class="btn btn-rounded btn-lg btn-how-to"> SOUND OFF  </a>
+                </div>
+                <div class="col-12 text-center mt-4 pt-4">
+                    <a role="button" onclick="playMusic()" class="btn btn-rounded btn-lg btn-how-to"> SOUND ON  </a>
                 </div>
             </div>    
         </div>

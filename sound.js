@@ -1,5 +1,9 @@
 var popupsound = document.getElementById("notifypop");
 
-function playAudio() {
-   popupsound.play(); //play the audio file
+function stopMusic() {
+   popupsound.pause(); //play the audio file
+}
+
+function playMusic() {
+    popupsound.play();
 }

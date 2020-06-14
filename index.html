@@ -8,138 +8,27 @@
       <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
       <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
    </head>
-   <body>
-   <!--Background and Heading Section-->
-      <section class="bg-img">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-12 text-center mt-3" id="level1">
-                  <h1>FLIPCARD</h1>
-                  <i class="fa fa-question-circle" onclick="openHelpModal()" aria-hidden="true"></i>
-               </div>
-            </div>
-         </div>
-          <!--Scoreboard Section-->
-         <section>
-            <div class="scoreboard center">
-               <span class="move">Moves</span>
-               <span class="moves">0</span>
-               <!--timer-->
-               <span class="Time">Time</span>
-               <span class="timer">0:00</span>
-            </div>
-         </section>
-          <!--Navigation Buttons Section-->
-         <section class="center mt-3">
-            <a href="index.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Restart</a>
-            <a onclick="hint()" class="btn btn-level-1 btn-lg ml-1 mb-1">Hint</a>
-            <a href="level2.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Level 2</a>
-         </section>
-          <!--Gameboard Section-->
-         <div class="grid mt-4">
-            <div class="row">
-               <div class="box">
-                  <div class="memory-card" data-framework="frenchie" data-state="unflipped">
-                     <img id ="img1" class="front-face" src="assets/img/frenchie.png" alt="frenchie" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="maltease" data-state="unflipped">
-                     <img id="img2" class="front-face" src="assets/img/maltease.png" alt="maltease" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="yorkie" data-state="unflipped">
-                     <img id="img3" class="front-face" src="assets/img/yorkie.png" alt="yorkie" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="pug" data-state="unflipped">
-                     <img id="img4" class="front-face" src="assets/img/pug.png" alt="pug" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="box">
-                  <div class="memory-card" data-framework="spotty" data-state="unflipped">
-                     <img id="img5" class="front-face" src="assets/img/spotty.png" alt="spotty" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="pitbull" data-state="unflipped">
-                     <img id="img6" class="front-face" src="assets/img/pitbull.png" alt="spotty" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="spotty" data-state="unflipped">
-                     <img id="img7" class="front-face" src="assets/img/spotty.png" alt="spotty" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="pitbull" data-state="unflipped">
-                     <img id="img8" class="front-face" src="assets/img/pitbull.png" alt="spotty" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="box">
-                  <div class="memory-card" data-framework="frenchie" data-state="unflipped">
-                     <img id="img9" class="front-face" src="assets/img/frenchie.png" alt="frenchie" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="maltease" data-state="unflipped">
-                     <img id="img10" class="front-face" src="assets/img/maltease.png" alt="maltease" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="yorkie" data-state="unflipped">
-                     <img id="img11" class="front-face" src="assets/img/yorkie.png" alt="yorkie" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-               <div class="box">
-                  <div class="memory-card" data-framework="pug" data-state="unflipped">
-                     <img id="img12" class="front-face" src="assets/img/pug.png" alt="pug" />
-                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!--Modal on game over -->
-      <div class="modal" id="levelCompleteModal">
-         <div class="modal-content modal-sm">
-            <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
-            <div class="modal-header">
-               <h2 class="center">Game Over</h2>
-            </div>
-            <div class="modal-body">
-               <div class="message">
-                  <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
-                  <p>You completed the game using 
-                     <span id="totalGameMoves"></span> moves 
-                     <br>in 
-                     <span id="totalGameTime"> minutes/seconds!</span>
-                  </p>
-                  <a href="index.html" class="btn btn-level-1 btn-lg mr-2">LEVEL 1</a>
-                  <a href="level2.html" class="btn btn-level-1 btn-lg">LEVEL 2</a>
-               </div>
-            </div>
-         </div>
-      </div>
-       <!--Help Modal-->
-      <div class="modal" id="helpModal">
+   <body onload="playAudio()">
+    <audio id="notifypop"> <!--Source the audio file. -->
+            <source src="FunAdventure.mp3" type="audio/mpeg">
+    </audio>
+        <div class="container">
+            <h1 class="landing-text center">FLIPCARD</h1>
+        </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 text-center mt-5 pt-5">
+                    <a role="button" onclick="openHelpModal()" class="btn btn-rounded btn-lg btn-how-to">HOW TO PLAY</a>
+                </div>
+                <div class="col-12 text-center mt-4 pt-4">
+                    <a role="button" onclick()="" class="btn btn-rounded btn-lg btn-how-to">START GAME</a>
+                </div>
+                <div class="col-12 text-center mt-4 pt-4">
+                    <a role="button" onclick()="" class="btn btn-rounded btn-lg btn-how-to"> SOUND OFF  </a>
+                </div>
+            </div>    
+        </div>
+         <div class="modal" id="helpModal">
          <div class="modal-dialog modal-sm">
             <div class="modal-content">
                <div class="modal-header">
@@ -155,6 +44,20 @@
             </div>
          </div>
       </div>
+      <footer>
+        <div class="footer" id="footer">
+            <div class="container-fluid footer-container">
+                <div class="row">
+                            <div class="col-12">
+                                <p style="color:white; padding-top: 8px; padding-right: 4px;">Created by Jade O Sullivan - Copyright &copy; 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
       <script src="script.js"></script>
+      <script src="sound.js"></script>
    </body>
 </html>

@@ -1,6 +1,11 @@
-/*backgrounds*/
-
+/* Backgrounds*/
 body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    height: 100vh;
+    background-size: 400%, 400%; 
+    animation: gradient 8s ease-in infinite;
+}
+.dogbackg {
      background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
      height: 100vh;
 }
@@ -11,6 +16,9 @@ body {
 }
 
 /*Fonts*/
+.landing-text {
+    font-size: 60px;
+}
 
  h1 {
      font-family: 'Balsamiq Sans', cursive;
@@ -39,6 +47,24 @@ body {
      color: grey;
 }
 
+.btn-how-to {
+    background-color: #d26de9; 
+    font-weight: 500;
+    color: #fff;
+    border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-how-to:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
  .btn-modal {
      background-color: lightcyan;
 }
@@ -50,6 +76,8 @@ body {
  .fa {
      font-size: medium;
 }
+
+#notifypop{ display:none;}
 
 /*Gameboard and Cards*/
 
@@ -126,6 +154,22 @@ body {
      transform: rotateY(180deg);
 }
 
+/* Footer*/
+footer {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
+  border-top: white 3px;
+}
+
+.footer-container {
+     height: 50px;
+     
+}
+
 /*Modal*/
 
 .modal {
@@ -185,4 +229,17 @@ body {
      color:aliceblue;
      font-size: 30px;
 }
- 
+
+/*Key Frames*/
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

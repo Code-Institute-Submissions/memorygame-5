@@ -30,6 +30,11 @@ body {
      text-align: center;
 }
 
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, orange, red);   -webkit-background-clip: text;
+  color: transparent;
+}
+
 /*Buttons and Links*/
 
  a:not([href]) {
@@ -66,7 +71,16 @@ body {
 }
 
  .btn-modal {
-     background-color: lightcyan;
+     background-color: violet;
+}
+
+.nav-buttons {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
 }
 
  i {
@@ -74,7 +88,9 @@ body {
 }
 
  .fa {
-     font-size: medium;
+     font-size: xx-large;
+     margin-top: 5px;
+     margin-left: 15px;
 }
 
 

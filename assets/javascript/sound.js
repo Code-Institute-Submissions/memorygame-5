@@ -1,11 +1,11 @@
 var popupsound = document.getElementById("notifypop");
-var cardFlip = document.getElementById("cardFlipNoise")
-//stops the audio
-function stopMusic() {
-   popupsound.pause(); 
+let cardFlipPop =document.getElementById("cardFlipNoise")
+
+export function stopMusic() {
+   popupsound.pause(); //play the audio file
 }
-//play the audio file
-function playMusic() {
+
+export function playMusic() {
     popupsound.play();
 }
 

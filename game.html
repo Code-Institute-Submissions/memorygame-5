@@ -21,23 +21,52 @@
                 <i class="fa fa-volume-up" onclick="enableMusic()"></i>
             </div>
         </div>
-        <div class="container nav-buttons">
-            <div class="row text-center">
-                <div class="col-12 text-center mb-3">
-                    <a role="button" id="open_help" onclick="openHelpModal()" class="btn btn-rounded btn-lg btn-how-to">HOW TO PLAY</a>
-                </div>
-                <div class="col-12 text-center mb-3">
-                    <a role="button" id="start_game" href="game.html" class="btn btn-rounded btn-lg btn-how-to">START GAME</a>
-                </div>
-                <div class="col-12 text-center mb-3">
-                    <a role="button" id="disable_music" onclick="disableMusic()" class="btn btn-rounded btn-lg btn-how-to"> SOUND OFF  </a>
-                </div>
-                <div class="col-12 text-center mb-3">
-                    <a role="button" id="enable_music" onclick="enableMusic()" class="btn btn-rounded btn-lg btn-how-to"> SOUND ON  </a>
-                </div>
-            </div>    
-        </div>
-         <div class="modal" id="helpModal">
+          <!--Scoreboard Section-->
+         <section>
+            <div class="scoreboard center">
+               <span class="move">Moves</span>
+               <span class="moves">0</span>
+               <!--timer-->
+               <span class="Time">Time</span>
+               <span class="timer">0:00</span>
+            </div>
+         </section>
+          <!--Navigation Buttons Section-->
+         <section class="center mt-3">
+            <a href="index.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Restart</a>
+            <a onclick="hint()" class="btn btn-level-1 btn-lg ml-1 mb-1">Hint</a>
+            <a href="index.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Restart</a>
+         </section>
+          <!--Gameboard Section-->
+         <div class="grid mt-4" id="game-board">
+            
+         </div>
+
+         <audio id="cardFlipNoise" src="pop.ogg" type="audio/ogg">
+    </audio>
+      <!--Modal on game over -->
+      <div class="modal" id="levelCompleteModal">
+         <div class="modal-content modal-sm">
+            <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
+            <div class="modal-header">
+               <h2 class="center">Game Over</h2>
+            </div>
+            <div class="modal-body">
+               <div class="message">
+                  <p>Congratulations! You successfully completed the level. Try beat your time or level up! </p>
+                  <p>You completed the game using 
+                     <span id="totalGameMoves"></span> moves 
+                     <br>in 
+                     <span id="totalGameTime"> minutes/seconds!</span>
+                  </p>
+                  <a href="index.html" class="btn btn-level-1 btn-lg mr-2">LEVEL 1</a>
+                  <a href="level2.html" class="btn btn-level-1 btn-lg">LEVEL 2</a>
+               </div>
+            </div>
+         </div>
+      </div>
+       <!--Help Modal-->
+      <div class="modal" id="helpModal">
          <div class="modal-dialog modal-sm">
             <div class="modal-content">
                <div class="modal-header">
@@ -48,7 +77,7 @@
                   <p class="rainbow-text">The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!</p>
                </div>
                <div class="modal-footer">
-                  <input class="btn btn-sm btn-modal" id="close_help" onclick="closeHelpModal()" value="Close">
+                  <input class="btn btn-sm btn-modal" onclick="closeHelpModal()" value="Close">
                </div>
             </div>
          </div>
@@ -64,8 +93,6 @@
                     </div>
                 </div>
     </footer>
-    <script type="module" src="./assets/javascript/main.js"></script>
-    
-    
-   </body>
+    <script type="module" src="assets/javascript/main.js"></script>
+    </body>
 </html>

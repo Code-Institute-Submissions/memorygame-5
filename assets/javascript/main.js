@@ -1,24 +1,21 @@
+
 import { playGame } from './gameengine.js';
 import { createBoard } from './createboard.js';
 import * as sound from './sound.js';
 import * as debug from './debug.js';
+import * as utils from './utils.js';
 
 
 
-window.enableMusic = enableMusic;
-window.disableMusic = disableMusic;
-window.openHelpModal = openHelpModal;
-window.closeHelpModal = closeHelpModal;
-window.startGame = startGame;
+window.enableMusic = utils.enableMusic;
+window.disableMusic = utils.disableMusic;
+window.openHelpModal = utils.openHelpModal;
+window.closeHelpModal = utils.closeHelpModal;
+window.openLevelsModal = utils.openLevelsModal;
+window.closeLevelsModal = utils.closeLevelsModal;
+window.startLevel = startLevel;
 
 
-  export function startGame()
-  {
-    debug.log("startGame");
-    createBoard();
-    playGame();
-    
-  }
 
   export function test()
   {
@@ -27,31 +24,9 @@ window.startGame = startGame;
     
   }
 
-  export function enableMusic()
-  {
-
-    sound.playMusic();
-    
+  export function startLevel(level){
+      sessionStorage.setItem("level", level);
+      window.location.href = "./game.html";
   }
 
-  export function disableMusic()
-  {
 
-    sound.stopMusic();
-    
-  }
-
-  //Retrieves Help Modal 
-
-function openHelpModal() {
-    const helpModal = document.getElementById('helpModal');
-    helpModal.classList.add('show-modal');
-    debug.log("opening modal test");
-}
-
-//closes help modal
-function closeHelpModal() {
-    const helpModal = document.getElementById('helpModal');
-    helpModal.classList.remove('show-modal');
-    debug.log("closing modal test");
-}

@@ -6,38 +6,95 @@
 //image is usedup
 
 import * as debug from './debug.js';
+import * as utils from './utils.js';
+//import { level } from './game.js';
 
 //For Level 1
 let numberRows = 3;
 let cardsPerRow =4;
 let gameBoard = document.getElementById('game-board');
-
+let cardHolderDiv =  document.createElement('div');
 
 // testing function
 
 
+export let cards = [];
+export let imagesCollection = []; //populated as we create each imageCard, we push the front face image into this array
+export let imagesAllocation =  Array(numberRows * cardsPerRow).fill(0);
+export let subjectCollection = [];
 
 
 
 
 
+let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
+       "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
+
+let fruitCollection = [ "banana","banana","apple","apple","avocado",
+			 "avocado","grapes","grapes","pinapple","pinapple","strawberry","strawberry", 
+             "watermelon","watermelon", "lemon","lemon"];	
+
+let travelCollection = ["flipflops","globe", "map", "neckpillow", "passport", "plane", "snorkel", "suitcase", "surfboard", "glasses","flipflops","globe", "map", "neckpillow", "passport", "plane", "snorkel", "suitcase", "surfboard", "glasses"];           
+
+subjectCollection = dogsCollection;
 
 
-//creates the gameboard - rows and cards in the row
-export function createBoard()
+export function createBoard(level)
 {
+    debug.log("requested level " + level);
+    //clearGameBoard();
+    if(level === "1")
+    {
+        numberRows = 3;
+        subjectCollection = dogsCollection;
+    }
+    else if(level === "2")
+    {
+        numberRows = 4;
+        subjectCollection = fruitCollection;
+    }
+    else
+    {
+        numberRows = 4;
+        cardsPerRow = 5;
+        subjectCollection = travelCollection;
+    }
+    imagesAllocation =  Array(numberRows * cardsPerRow).fill(0);
     debug.log("Creating Game Board for " + numberRows +  " rows and " + cardsPerRow + " cards per row");
+    utils.shuffleImagesTest(imagesAllocation); //randomize allocations
+    
+    //createCardHolderDiv();
+    
     var i = 0;    
     for (i = 0; i < numberRows; i++)
     {
         debug.log("Generating card row " + i);
         createCardRow(i);
     }
+    setImageSources();
 
 
 }
 
-//creates the rows for the gameboard
+function createCardHolderDiv()
+{
+    
+    cardHolderDiv.className = "card-holder";
+    cardHolderDiv.setAttribute("id", "card_holder");
+    gameBoard.appendChild(cardHolderDiv); 
+}
+
+/*
+
+               <div class="box">
+                  <div class="memory-card" data-framework="frenchie" data-state="unflipped">
+                     <img id ="img1" class="front-face" src="assets/img/frenchie.png" alt="frenchie" />
+                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
+                  </div>
+               </div>
+
+
+*/
 function createCardRow(rowNumber)
 {
     //we create some dynamic elements
@@ -48,10 +105,8 @@ function createCardRow(rowNumber)
         let rowDiv =  document.createElement('div');
         rowDiv.className = "row";
         rowDiv.setAttribute("id", "row_" + rowNumber);
-        //rowDiv.innerHTML = row;
-        //let elemenText  = document.createTextNode("This is some text");
-        //rowDiv.appendChild(elemenText);
-        gameBoard.appendChild(rowDiv);   
+        gameBoard.appendChild(rowDiv);  
+        //cardHolderDiv.appendChild(rowDiv);
         for (i = 0; i < cardsPerRow; i++)
         {
             debug.log("Generating card " + i + " on row " + rowNumber);
@@ -70,6 +125,13 @@ function createCardRow(rowNumber)
 
 
 
+/*
+<div class="box">
+                  <div class="memory-card" data-framework="frenchie" data-state="unflipped">
+
+                  </div>
+               </div>
+*/
 // creates card element
 // takes a div reference (object) and a card number
 function createBox(rowDiv,cardNumber)
@@ -85,7 +147,7 @@ function createBox(rowDiv,cardNumber)
     
 }
 
-//creates the card div with class of memory-card, this div holds the two images
+
 function createMemoryCard(boxDiv,cardNumber)
 {
     let cardDiv =  document.createElement('div');
@@ -94,10 +156,16 @@ function createMemoryCard(boxDiv,cardNumber)
     cardDiv.setAttribute("data-framework", "not set");
     cardDiv.setAttribute("data-state", "unflipped");
     boxDiv.appendChild(cardDiv);
+    cards.push(cardDiv);
     createCardImage(cardDiv, cardNumber);
 }
 
-//creates the two image elements - front-face and back-face
+/*
+
+                     <img id ="img1" class="front-face" src="assets/img/frenchie.png" alt="frenchie" />
+                     <img class="back-face" src="assets/img/blank.png" alt="blank" />
+                     */
+
 function createCardImage(cardDiv, cardNumber)
 {
     let frontImage = document.createElement('img');
@@ -111,7 +179,33 @@ function createCardImage(cardDiv, cardNumber)
     backImage.setAttribute("alt", "blank");
     cardDiv.appendChild(frontImage);
     cardDiv.appendChild(backImage);
+    imagesCollection.push(frontImage);
+    debug.log("creteCardImage: increment");
+    
 
 
+}
 
+//sets the source png for an image, also sets the alt and dataset to same name
+function setImageSources()
+{
+    debug.log("imagesAllocation.Length is " + imagesAllocation.length);
+	for (var i = 0; i < imagesAllocation.length; i++) {
+		let index = imagesAllocation[i] -1;
+		debug.log("setImagesSources: Index " + index + " card " + subjectCollection[index]);
+		imagesCollection[i].src="assets/img/" + subjectCollection[index] + ".png";
+		imagesCollection[i].alt= subjectCollection[index];
+		imagesCollection[i].parentElement.dataset.framework = subjectCollection[index] ;	
+		//log("Assigning " + subjectCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
+	}
+	return false;
+}
+
+
+function clearGameBoard()
+{
+    cards.length = 0;
+    imagesCollection.length = 0;
+    imagesAllocation.length = 0;
+    //cardHolderDiv.innerHTML = '<div class="card-holder"></div>';
 }

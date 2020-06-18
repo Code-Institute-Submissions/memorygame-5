@@ -1,35 +1,38 @@
 /* Backgrounds*/
-
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    height: 100vh;
+    height: 100%;
     background-size: 400%, 400%; 
     animation: gradient 8s ease-in infinite;
+    
 }
 
+#game-section {
+    display: block;
+    overflow: auto;
+}
 .dogbackg {
      background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
      height: 100vh;
 }
 
-.fruitbackg {
+ .fruitbackg {
      background: linear-gradient(rgb(255, 26, 0),rgb(255, 141, 65),rgb(255, 211, 0));
      height: 100vh;
 }
 
 /*Fonts*/
-
 .landing-text {
-    font-size: 60px;
+    font-size: 50px;
 }
 
-h1 {
+ h1 {
      font-family: 'Balsamiq Sans', cursive;
-     font-size: xx-large;
+     font-size: x-large;
      color: white;
 }
 
-.center {
+ .center {
      text-align: center;
 }
 
@@ -40,19 +43,19 @@ h1 {
 
 /*Buttons and Links*/
 
-a:not([href]) {
-     color:grey;
+ a:not([href]) {
+     color:white;
      text-decoration: none;
 }
 
-.btn-level-2 {
+ .btn-level-2 {
      background-color: yellow;
-     color:grey;
+     color:white;
 }
 
-.btn-level-1{
+ .btn-level-1{
      background-color: #dc9ceb;
-     color: grey;
+     color: white;
 }
 
 .btn-how-to {
@@ -60,10 +63,10 @@ a:not([href]) {
     font-weight: 500;
     color: #fff;
     border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
 .btn-how-to:hover {
@@ -73,7 +76,7 @@ a:not([href]) {
   transform: translateY(-7px);
 }
 
-.btn-modal {
+ .btn-modal {
      background-color: violet;
 }
 
@@ -83,21 +86,24 @@ a:not([href]) {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
 }
 
-i {
+ i {
      color: white;
 }
 
-.fa {
+ .fa {
      font-size: xx-large;
      margin-top: 5px;
      margin-left: 15px;
 }
 
+
+
 /*Gameboard and Cards*/
 
-.grid{
+ .grid{
      margin: 0 auto;
      width: 80vw;
      max-width: 60vh;
@@ -107,11 +113,11 @@ i {
      perspective: 1000px;
 }
 
-.row {
+ .row {
      display: flex;
 }
 
-.box {
+ .box {
      background: white;
      box-shadow: 0 0 10px;
      margin: 5px;
@@ -121,14 +127,14 @@ i {
      position: relative;
 }
 
-.box:after {
+ .box:after {
      content: "";
      float:left;
      display: block;
      padding-top: 100%;
 }
 
-.memory-card {
+ .memory-card {
      position: absolute;
      left: 0;
      right: 0;
@@ -143,21 +149,21 @@ i {
      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
-.memory-card:active {
+ .memory-card:active {
      transform: scale(0.97);
      transition: transform .2s;
 }
 
-.memory-card.flip {
+ .memory-card.flip {
      transform: rotateY(180deg);
 }
 
-img {
+ img {
      width: 100%;
      height:auto;
 }
 
-.front-face, .back-face {
+ .front-face, .back-face {
      width: 100%;
      height: 100%;
      padding: 5px;
@@ -166,12 +172,11 @@ img {
      backface-visibility: hidden;
 }
 
-.front-face {
+ .front-face {
      transform: rotateY(180deg);
 }
 
 /* Footer*/
-
 footer {
   bottom: 0;
   left: 0;
@@ -180,13 +185,16 @@ footer {
   width: 100%;
   z-index: -1;
   border-top: white 3px;
+  margin-bottom: 10px;
+  padding-top: 10px;
 }
 
 .footer-container {
-     height: 50px;
+     height: 30px;
+     
 }
 
-/*Modals*/
+/*Modal*/
 
 .modal {
      position: fixed;
@@ -202,46 +210,46 @@ footer {
      text-align: center;
 }
 
-.closeBtn {
+ .closeBtn {
      color: white;
      float: right;
      font-size: 30px;
 }
 
-.closeBtn:hover, .closeBtn:focus {
+ .closeBtn:hover, .closeBtn:focus {
      color: white;
      text-decoration: none;
      cursor: pointer;
 }
 
-.show-modal {
+ .show-modal {
      display: block;
 }
 
-.modal-footer {
+ .modal-footer {
      text-align: center;
 }
 
 /*ScoreBoard*/
 
-.scoreboard .moves {
+  .scoreboard .moves {
      font-size: 30px;
      margin-right: auto;
 }
 
-.scoreboard .move {
+ .scoreboard .move {
      font-size: 30px;
      color: white;
      margin-left: 10px;
 }
 
-.scoreboard .Time {
+ .scoreboard .Time {
      font-size: 30px;
      color: white;
      margin-left: 1em;
 }
 
-.moves, .timer {
+ .moves, .timer {
      color:aliceblue;
      font-size: 30px;
 }
@@ -258,4 +266,18 @@ footer {
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+/*Media Queries*/
+@media only screen and (max-width: 600px) {
+    footer {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
+  border-top: white 3px;
+  margin-bottom: 10px;
+}
 }

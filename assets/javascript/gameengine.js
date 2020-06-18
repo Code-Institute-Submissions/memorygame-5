@@ -1,12 +1,12 @@
 import * as debug from './debug.js';
 import * as utils from './utils.js';
+import { cards,imagesCollection,imagesAllocation,subjectCollection } from './createboard.js'
 
 
 
 
 
-
-let cards = document.querySelectorAll('.memory-card');
+//let cards = document.getElementsByClassName('.memory-card');
 
 
 let cardState = [];
@@ -26,17 +26,11 @@ let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
 let movesCount = 0;
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
-let imagesCollection = [];
-let imagesAllocation = [];
+//let imagesCollection = [];
+//let imagesAllocation = [];
 let level = document.getElementById('level1');
 
-let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
-       "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
 
-let fruitCollection = [ "banana","banana","apple","apple","avocado",
-			 "avocado","grapes","grapes","pinapple","pinapple","strawberry","strawberry", 
-             "watermelon","watermelon", "lemon","lemon"];	
-let subjectCollection = [];
 
 
 
@@ -44,30 +38,28 @@ let subjectCollection = [];
 
 
 //main game play
+// assigns images to cards randomly by using several functions
 export function playGame()
 {
 
-  debug.log("playing the game Level " + level);
-  if (level) {
-    subjectCollection = dogsCollection;             
-  }else {
-    subjectCollection = fruitCollection; }
 
-//Test to see if element defined 
+
+
+  //Test to see if element defined 
   utils.validateElement(moves);
 
 
-//Add Event Listners 
+  //Add Event Listners 
 
   utils.assignClickListner(closeModalBtn,closeModal);
 
-  if(cards)
-  {
+    if(cards)
+    {
     debug.log("Assigning Listner for " + cards.length + " cards");
     for (var i = 0; i < cards.length; i++) {
 
-      debug.log("Assigning Lister for card " + card);
-      cards[i].addEventListener('click',flipcard);
+      debug.log("Assigning Lister for card " + cards[i]);
+      cards[i].addEventListener('click',flipCard);
     }
 
     
@@ -75,153 +67,49 @@ export function playGame()
   else
 	  utils.log("Cards not defined");
 
-	getImagesCollection();
-	clearImagesAllocation();
-	//logImagesCollection();
-	//shuffleImages();
-	shuffleImagesTest();
-	setImageSources();
 
-}
+	utils.shuffleImagesTest(imagesAllocation);
 
-// retrieves images by collecting them from html
-function getImagesCollection()
-{
 
-	imagesCollection = document.querySelectorAll('img.front-face');
-	
-}
-// Allocates the retreived images to the game board
-function allocateImage(imageIndex,value)
-{
-	imagesAllocation[imageIndex] = value;
-}
-
-// sets the src of the image 
-function setImageSource(imageIndex,srcIndex)
-{
-	imagesCollection[imageIndex].src = srcsCollection[allocationIndex[srcIndex]];
-}
-// checks to see image hasn't already been allocated - so that only two of each image appears
-function IsNumberAllocated(number)
-{
-	for (var i = 0; i < imagesAllocation.length; i++) {
-
-		if( number === imagesAllocation[i])
-			return true;		
-	}
-	return false;
-}
-// shuffles images so they appear in random order
-function shuffleImages()
-{
-	let randomPos=0
-	let attempts=0;
-	for (var i = 0; i < imagesAllocation.length; i++) {
-		do
-		{
-			randomPos = Math.floor(Math.random() * 13);
-	
-			//log("randomPos = " + randomPos);
-			attempts++;
-			if(attempts > 40)
-			{
-				debug.log("Giving up");
-				break;
-			}
-		}		
-		while (IsNumberAllocated(randomPos))
-		attempts = 0;
-		imagesAllocation[i] = randomPos;
-		//log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
-	}
-}
-
-// images appear beside each other for testing
-function shuffleImagesTest()
-{
-
-	for (var i = 0; i < imagesAllocation.length; i++) {
-		imagesAllocation[i] = i+1;
-		//log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
-	}
 }
 
 
 
-//sets the source png for an image, also sets the alt and dataset to same name
-function setImageSources()
-{
-	for (var i = 0; i < imagesAllocation.length; i++) {
-		let index = imagesAllocation[i] -1;
-		debug.log("Index " + index + " dog " + subjectCollection[index]);
-		imagesCollection[i].src="assets/img/" + subjectCollection[index] + ".png";
-		imagesCollection[i].alt= subjectCollection[index];
-		imagesCollection[i].parentElement.dataset.framework = subjectCollection[index] ;	
-		//log("Assigning " + subjectCollection[index] + " to image ID " + imagesCollection[i].id + " i=" + i + " allocation= " + index );
-	}
-	return false;
-}
-// removes the css class 'flip'
- function unflipCards() {
-    for (var i = 0; i < cards.length; i++) 
-        {
-		
-		cards[i].classList.remove('flip');
-		
-	}
-}
+
+
+
+
 
 // flashes cards for 600 milliseconds to give game player a hint
-function hint() {
-    debug.log("Hint function:");
-    for (var i = 0; i < cards.length; i++) {
-          if(cards[i].dataset.state === "unflipped")
-		  cards[i].classList.add('flip');
-}
-setTimeout(hide, 600)
+export function hint() 
+{
+  debug.log("Hint function:");
+  for (var i = 0; i < cards.length; i++) 
+  {
+        if(cards[i].dataset.state === "unflipped")
+    cards[i].classList.add('flip');
+
+  }
+  setTimeout(hide, 600)
 }
 
 // allows cards to flash for hint for certain length of time
 function hide()
 {
 
-	for (var i = 0; i < cards.length; i++) {
+  for (var i = 0; i < cards.length; i++)
+  {
 		if(cards[i].dataset.state === "unflipped")
 		cards[i].classList.remove('flip');
 		
-	}
+  
+  }
 }
 
 
 
-// clears the previous images allocation on new game
-function clearImagesAllocation()
-{
-		for (var i = 0; i < imagesCollection.length; i++) {
-		
-		imagesAllocation[i] = 0;
-		
-	}
-}
 
-//turns cards over
-function restoreCards()
-{
-	for (var i = 0; i < cards.length; i++) {
-		
-		cards[i].classList.add('flip');
-		
-	}
 
-;
-}
-// reads the dataset state of a card to allow hint function to flash unmatched cards
-function readFlip () {
-    for (var i = 0; i < cards.length; i++) {
-        debug.log("flipped state " + cards[i].dataset.state );
-    }
-}
 // flips cards to reveal image
 function flipCard()
 {
@@ -231,12 +119,10 @@ function flipCard()
     return;
 
   this.classList.add('flip');
- 
   if (!hasFlippedCard)
   {
     // first click
     hasFlippedCard = true;
-     cardFlipNoise();
     firstCard = this;
      startTimer();
         
@@ -253,7 +139,7 @@ function flipCard()
 // checks to see if both images match
 function checkForMatch() {
   let isMatch = (firstCard.dataset.framework === secondCard.dataset.framework);
-	debug.log("Datasets first " + firstCard.parentElement + " second  " + secondCard.parentElement);
+	debug.log("Datasets first " + firstCard.parentElement + " second  " + secondCard.parentElement + " collection length" + subjectCollection.length);
  if ( isMatch) 
  { 
      disableCards();
@@ -286,7 +172,6 @@ function disableCards() {
   resetBoard();
 }
 
-//removes the flip on cards once both have been turned over to allow them to go back to back-face
 function unflipCardPair() {
   lockBoard = true;
 
@@ -309,7 +194,7 @@ function resetBoard() {
 // adds move to counter
 function addMove() {
     movesCount++;
-    log(moves.innerHTML + " Adding " + movesCount + " to " + moves);
+    debug.log(moves.innerHTML + " Adding " + movesCount + " to " + moves);
     document.querySelector(".moves").innerHTML = movesCount;
 
 }
@@ -317,7 +202,8 @@ function addMove() {
 
 
 // GAME OVER
-function gameOver() {
+function gameOver()
+{
 
 
     //show modal on game end
@@ -327,7 +213,8 @@ function gameOver() {
 }
 
 // allows game over modal to be closed
-function closeModal() {
+function closeModal()
+{
    
 	debug.log("Closing Model");
     	modal.style.display = 'none'; //element will not be displayed 
@@ -344,14 +231,17 @@ function openModal() {
 
 
 // game timer 
-function startTimer() {
-    if (resetGame == true) {
+function startTimer()
+{
+    if (resetGame == true)
+    {
         let timer = 0;
-        if (timeStart === "") {
+        if (timeStart === "")
+        {
             timeStart = setInterval(() => { //8-30 if i use => timer works, change it per https://www.w3schools.com/js/js_timing.asp it acts like it wants to start but doesnt
                 ++timer;
-                second = timer % 60;
-                minute = Math.floor(timer / 60);
+                var  second = timer % 60;
+                var minute = Math.floor(timer / 60);
                 if (minute < 10) minute = '0' + minute;
                 if (second < 10) second = '0' + second;
                 //hour = Math.floor(timer / 3600);
@@ -372,18 +262,21 @@ function startTimer() {
     }
 }
 // allows timer to be reset for new game
-function resetTimer() {
+function resetTimer()
+{
     document.querySelector(".timer").innerHTML = '00:00';
     [hour, minute, second] = [0, 0, 0];
 }
 // stops times to allow total game time to be read
-function stopTimer() {
+function stopTimer()
+{
     clearInterval(timeStart); //clearInterval needs to use the variable from the setInterval 
     timeStart = '';
 }
 
 //resets scoreboard
-function resetPlay() {
+function resetPlay()
+{
     stopTimer();
     resetTimer();
     resetMoves();
@@ -391,7 +284,8 @@ function resetPlay() {
 
 }
 //resets the move counter back to 0
-function resetMoves() {
+function resetMoves()
+{
     
     movesCount = 0;
     moves.innerHTML = movesCount;

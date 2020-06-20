@@ -27,14 +27,19 @@ export let subjectCollection = [];
 
 
 
-let dogsCollection = [ "frenchie","frenchie","yorkie","yorkie","maltease",
-       "maltease","pug","pug","spotty","spotty","pitbull","pitbull"];
+let dogsCollection = [ "frenchie","sausage","yorkie","pug","maltease", "spotty"];
 
-let fruitCollection = [ "banana","banana","apple","apple","avocado",
-			 "avocado","grapes","grapes","pinapple","pinapple","strawberry","strawberry", 
-             "watermelon","watermelon", "lemon","lemon"];	
+let dogsCollectionFull = dogsCollection.concat(dogsCollection);
 
-let travelCollection = ["flipflops","globe", "map", "neckpillow", "passport", "plane", "snorkel", "suitcase", "surfboard", "glasses","flipflops","globe", "map", "neckpillow", "passport", "plane", "snorkel", "suitcase", "surfboard", "glasses"];           
+let fruitCollection = ["banana","apple","avocado","grapes","pinapple","strawberry", 
+             "watermelon","lemon"];	
+
+let fruitCollectionFull = fruitCollection.concat(fruitCollection);             
+
+let travelCollection = ["flipflops","globe", "map", "neckpillow", "passport", "plane", "snorkel", "suitcase", "surfboard", "glasses"
+];     
+
+let travelCollectionFull = travelCollection.concat(travelCollection);
 
 subjectCollection = dogsCollection;
 
@@ -46,18 +51,18 @@ export function createBoard(level)
     if(level === "1")
     {
         numberRows = 3;
-        subjectCollection = dogsCollection;
+        subjectCollection = dogsCollectionFull;
     }
     else if(level === "2")
     {
         numberRows = 4;
-        subjectCollection = fruitCollection;
+        subjectCollection = fruitCollectionFull;
     }
     else
     {
         numberRows = 4;
         cardsPerRow = 5;
-        subjectCollection = travelCollection;
+        subjectCollection = travelCollectionFull;
     }
     imagesAllocation =  Array(numberRows * cardsPerRow).fill(0);
     debug.log("Creating Game Board for " + numberRows +  " rows and " + cardsPerRow + " cards per row");

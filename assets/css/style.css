@@ -1,24 +1,25 @@
 /* Backgrounds*/
-body {
+.indexbg {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     height: 100%;
-    background-size: 400%, 400%; 
+    background-size: 500%, 500%;
     animation: gradient 8s ease-in infinite;
+    
     
 }
 
-#game-section {
+/*#game-section {
     display: block;
     overflow: auto;
-}
+}*/
 .dogbackg {
      background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
      height: 100vh;
 }
 
  .fruitbackg {
-     background: linear-gradient(rgb(255, 26, 0),rgb(255, 141, 65),rgb(255, 211, 0));
-     height: 100vh;
+     background: linear-gradient(rgb(255, 26, 0),rgb(255, 141, 65),rgb(255, 211, 0)) no-repeat;
+     height: 100%;
 }
 
 /*Fonts*/
@@ -108,7 +109,7 @@ body {
      width: 80vw;
      max-width: 60vh;
      height: 80vw;
-     max-height: 60vh;
+     max-height: 80vh;
      font-size: 1rem;
      perspective: 1000px;
 }
@@ -186,11 +187,11 @@ footer {
   z-index: -1;
   border-top: white 3px;
   margin-bottom: 10px;
-  padding-top: 10px;
+  margin-top: 10px;
 }
 
 .footer-container {
-     height: 30px;
+     height: 20px;
      
 }
 

@@ -21,14 +21,16 @@ let elaspedTime = 0;
 let totalGameMovesElement = document.getElementById('totalGameMoves');
 let moves = document.getElementsByClassName('.moves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
-let timer = document.getElementById('timer')
+let timer = document.getElementById('timer');
+let hintsUsed = 0;
 let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
+let maxHintsLevel = 0;
 let movesCount = 0;
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
 //let imagesCollection = [];
 //let imagesAllocation = [];
-let level = document.getElementById('level1');
+
 
 
 
@@ -39,9 +41,26 @@ let level = document.getElementById('level1');
 
 //main game play
 // assigns images to cards randomly by using several functions
-export function playGame()
-{
 
+export function playGame()
+{ 
+   let level = sessionStorage.getItem("level");
+    debug.log("level" + level);
+   if ( level === "1" ) 
+   {
+       maxHintsLevel = 1;
+   }
+   else if (level === "2") {
+       maxHintsLevel = 2;
+   }
+   else if (level === "3") { 
+       maxHintsLevel = 3;
+   }
+   else{
+       debug.log("Unknown Level [" + level + "]");
+   }
+   debug.log("maxhintslevel "  + maxHintsLevel + " level [" + level + "]");
+   
 
 
 
@@ -73,9 +92,18 @@ export function playGame()
 
 }
 
+function openHintsModal () {
+     const hintsModal = document.getElementById('hintsModal');
+    hintsModal.classList.add('show-modal');
 
+}
 
+ export function closeHintsModal() {
+    const hintsModal = document.getElementById('hintsModal');
+    hintsModal.classList.remove('show-modal'); 
+}
 
+ 
 
 
 
@@ -84,7 +112,15 @@ export function playGame()
 export function hint() 
 {
   debug.log("Hint function:");
-  for (var i = 0; i < cards.length; i++) 
+  hintsUsed++;
+  debug.log("hints " + hintsUsed + " max hints " + maxHintsLevel);
+  if (hintsUsed > maxHintsLevel)
+  {
+      openHintsModal();
+  }
+  else
+  {
+        for (var i = 0; i < cards.length; i++) 
   {
         if(cards[i].dataset.state === "unflipped")
     cards[i].classList.add('flip');
@@ -105,6 +141,8 @@ function hide()
   
   }
 }
+  }
+  
 
 
 

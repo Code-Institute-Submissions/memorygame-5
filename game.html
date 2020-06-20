@@ -8,7 +8,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
       <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
    </head>
-   <body>
+   <body class="indexbg">
     <audio id="notifypop" src="FunAdventure.mp3" type="mpeg" loop="loop" autoplay="autoplay">
     </audio>
         <div id="game-section">
@@ -33,13 +33,13 @@
                 </div>
             </section>
             <!--Navigation Buttons Section-->
-            <section class="center mt-3">
+            <section class="center mt-1">
                 <a href="index.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Home</a>
-                <a onclick="hint()" class="btn btn-level-1 btn-lg ml-1 mb-1">Hint</a>
+                <a id="hints" onclick="hint()" class="btn btn-level-1 btn-lg ml-1 mb-1">Hint</a>
                 <a onclick="openLevelsModal()"  class="btn btn-level-1 btn-lg ml-1 mb-1">Levels</a>
             </section>
             <!--Gameboard Section-->
-            <div class="grid mt-4" id="game-board">
+            <div class="grid mt-2" id="game-board">
                 
             </div>
         </div>
@@ -105,8 +105,24 @@
             </div>
          </div>
       </div>
+        <!--Hints Modal-->
+      <div class="modal" id="hintsModal">
+         <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <span aria-label="close" role="button" class="close" onclick="closeHintsModal()">&times;</span>
+               </div>
+               <div class="modal-body">
+                  <p class="rainbow-text">Sorry! You have used all your hints for this level.</p>
+               </div>
+               <div class="modal-footer">
+                  <input class="btn btn-sm btn-modal" onclick="closeHintsModal()" value="Close">
+               </div>
+            </div>
+         </div>
+      </div>
       <footer>
-        <div class="footer" id="footer">
+      <div class="footer" id="footer">
             <div class="container-fluid footer-container">
                 <div class="row">
                             <div class="col-12">
@@ -116,6 +132,7 @@
                     </div>
                 </div>
     </footer>
+        
     <script type="module" src="./assets/javascript/game.js"></script>
     </body>
 </html>

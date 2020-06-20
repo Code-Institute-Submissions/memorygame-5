@@ -1,4 +1,4 @@
-import { playGame,hint,closeHintsModal } from './gameengine.js';
+import { playGame,hint,closeHintsModal,levelOptionsModal } from './gameengine.js';
 import { createBoard } from './createboard.js';
 import { startLevel } from './main.js'
 import * as debug from './debug.js';
@@ -11,6 +11,8 @@ window.openHelpModal = utils.openHelpModal;
 window.closeHelpModal = utils.closeHelpModal;
 window.openLevelsModal = utils.openLevelsModal;
 window.closeLevelsModal = utils.closeLevelsModal;
+window.openLevelsModal = utils.openLevelsModal;
+window.levelOptionsModal = levelOptionsModal;
 window.closeHintsModal = closeHintsModal;
 window.hint = hint; //this uses the hint function defined in the gamengine file
 window.setLevel = setLevel;
@@ -43,6 +45,7 @@ export function startGame()
   playGame();
   
 }
+
 
 
 

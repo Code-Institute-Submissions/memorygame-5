@@ -143,7 +143,6 @@ function createBox(rowDiv,cardNumber)
 {
     // for number of images
         // createCardImage
-    var i = 0; 
     let boxDiv =  document.createElement('div');
     boxDiv.className = "box";
     boxDiv.setAttribute("id", "box_" + cardNumber);
@@ -207,10 +206,3 @@ function setImageSources()
 }
 
 
-function clearGameBoard()
-{
-    cards.length = 0;
-    imagesCollection.length = 0;
-    imagesAllocation.length = 0;
-    //cardHolderDiv.innerHTML = '<div class="card-holder"></div>';
-}

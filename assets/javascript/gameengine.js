@@ -6,6 +6,7 @@ import { cards,imagesCollection,imagesAllocation,subjectCollection } from './cre
 
 
 
+
 //let cards = document.getElementsByClassName('.memory-card');
 
 
@@ -21,7 +22,6 @@ let elaspedTime = 0;
 let totalGameMovesElement = document.getElementById('totalGameMoves');
 let moves = document.getElementsByClassName('.moves');
 let totalGameTimeElement = document.getElementById('totalGameTime');
-let timer = document.getElementById('timer');
 let hintsUsed = 0;
 let closeModalBtn = document.getElementById('closeModal');
 let modal = document.getElementById('levelCompleteModal');
@@ -250,8 +250,14 @@ function gameOver()
    
 }
 
+export function levelOptionsModal() {
+    closeModal();
+    openLevelsModal();
+
+}
+
 // allows game over modal to be closed
-function closeModal()
+ function closeModal()
 {
    
 	debug.log("Closing Model");
@@ -266,6 +272,7 @@ function openModal() {
     totalGameTimeElement.innerHTML = elaspedTime;
     totalGameMoves.innerHTML = movesCount +1;
 }
+
 
 
 // game timer 
@@ -299,12 +306,7 @@ function startTimer()
         }
     }
 }
-// allows timer to be reset for new game
-function resetTimer()
-{
-    document.querySelector(".timer").innerHTML = '00:00';
-    [hour, minute, second] = [0, 0, 0];
-}
+
 // stops times to allow total game time to be read
 function stopTimer()
 {
@@ -312,21 +314,3 @@ function stopTimer()
     timeStart = '';
 }
 
-//resets scoreboard
-function resetPlay()
-{
-    stopTimer();
-    resetTimer();
-    resetMoves();
-    
-
-}
-//resets the move counter back to 0
-function resetMoves()
-{
-    
-    movesCount = 0;
-    moves.innerHTML = movesCount;
-
-
-}

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>FLIPCARD</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-      <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-      <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-   </head>
-   <body class="indexbg">
-    <audio id="notifypop" src="FunAdventure.mp3" type="mpeg" loop="loop" autoplay="autoplay">
-    </audio>
+    <head>
+        <title>FLIPCARD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="dogbackg">
+        <audio id="notifypop" src="FunAdventure.mp3" type="mpeg" loop="loop" autoplay="autoplay"></audio>
         <div id="game-section">
             <div class="container text-center">
                 <h1 class="landing-text center">FLIPCARD</h1>
             </div>
+            <!--Control Icons-->
             <div class="container">
                 <div class="col-12 text-center">
                     <i class="fa fa-volume-off" onclick="disableMusic()"></i>
@@ -25,104 +25,115 @@
             <!--Scoreboard Section-->
             <section>
                 <div class="scoreboard center">
-                <span class="move">Moves</span>
-                <span class="moves">0</span>
-                <!--timer-->
-                <span class="Time">Time</span>
-                <span class="timer">0:00</span>
+                    <span class="move">Moves</span>
+                    <span class="moves">0</span>
+                    <!--timer-->
+                    <span class="Time">Time</span>
+                    <span class="timer">0:00</span>
                 </div>
             </section>
             <!--Navigation Buttons Section-->
             <section class="center mt-1">
                 <a href="index.html" class="btn btn-level-1 btn-lg ml-1 mb-1">Home</a>
                 <a id="hints" onclick="hint()" class="btn btn-level-1 btn-lg ml-1 mb-1">Hint</a>
-                <a onclick="openLevelsModal()"  class="btn btn-level-1 btn-lg ml-1 mb-1">Levels</a>
+                <a onclick="openLevelsModal()" class="btn btn-level-1 btn-lg ml-1 mb-1">Levels</a>
             </section>
             <!--Gameboard Section-->
-            <div class="grid mt-2" id="game-board">
-                
+            <div class="grid mt-2" id="game-board"></div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <div class="footer" id="footer">
+                <div class="container-fluid footer-container">
+                    <div class="row">
+                        <div class="col-12">
+                            <p style="color: white; padding-top: 8px; padding-right: 4px;">Created by Jade O Sullivan - Copyright &copy; 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Levels Modal -->
+        <div class="modal" id="levelsModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span aria-label="close" role="button" class="close" onclick="closeLevelsModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <h2 class="rainbow-text">SELECT A LEVEL</h2>
+                        <div class="row d-flex justify-content-center">
+                            <a role="button" id="level1" onclick="startLevel('1')" class="btn btn-rounded btn-lg btn-how-to mb-3">LEVEL 1</a>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <a role="button" id="level2" onclick="startLevel('2')" class="btn btn-rounded btn-lg btn-how-to mb-3">LEVEL 2</a>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <a role="button" id="level3" onclick="startLevel('3')" class="btn btn-rounded btn-lg btn-how-to mb-3">LEVEL 3</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-sm btn-modal" id="close_levels" onclick="closeLevelsModal()" value="Close" />
+                    </div>
+                </div>
             </div>
         </div>
-        <!--Levels Modal -->
-      <div class="modal" id="levelsModal">
-         <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <span aria-label="close" role="button" class="close" onclick="closeLevelsModal()">&times;</span>
-               </div>
-               <div class="modal-body">
-                  <h2 class="rainbow-text">SELECT A LEVEL</h2>
-                  <div class="row d-flex justify-content-center">
-                     <a role="button" id="level1" onclick="startLevel('1')" class="btn btn-rounded btn-lg btn-how-to mb-3">LEVEL 1</a>
-                  </div>
-                  <div class="row d-flex justify-content-center">
-                     <a role="button" id="level2" onclick="startLevel('2')" class="btn btn-rounded btn-lg btn-how-to mb-3">LEVEL 2</a>
-                  </div>
-                  <div class="row d-flex justify-content-center">
-                     <a role="button" id="level3" onclick="startLevel('3')" class="btn btn-rounded btn-lg btn-how-to mb-3">LEVEL 3</a>
-                  </div>
-               </div>
-               <div class="modal-footer">
-                  <input class="btn btn-sm btn-modal" id="close_levels" onclick="closeLevelsModal()" value="Close">
-               </div>
+        <!--Modal on game over -->
+        <div class="modal" id="levelCompleteModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
+                    <div class="modal-body">
+                        <div class="message">
+                            <h2 class="rainbow-text">GAME OVER</h2>
+                            <p class="rainbow-text">Congratulations! You successfully completed the level. Try beat your time or level up!</p>
+                            <p class="rainbow-text">
+                                You completed the game using <span id="totalGameMoves"></span> moves <br />
+                                in
+                                <span id="totalGameTime"> minutes/seconds!</span>
+                            </p>
+                            <a role="button" onclick="levelOptionsModal()" class="btn btn-rounded btn-lg btn-how-to mb-3">TRY ANOTHER LEVEL</a>
+                            <a role="button" href="index.html" class="btn btn-rounded btn-lg btn-how-to mb-3">RETURN TO HOME</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-
-      <!--Modal on game over -->
-      <div class="modal" id="levelCompleteModal">
-        <div class="modal-dialog modal-sm">
-         <div class="modal-content">
-            <span aria-label="close" role="button" class="close" id="closeModal">&times;</span>
-            <div class="modal-body">
-               <div class="message">
-                  <h2 class="rainbow-text">GAME OVER</h2>
-                  <p class="rainbow-text">Congratulations! You successfully completed the level. Try beat your time or level up! </p>
-                  <p class="rainbow-text">You completed the game using <span id="totalGameMoves"></span> moves <br>in <span id="totalGameTime"> minutes/seconds!</span>
-                  </p>
-                  <a role="button" onclick="levelOptionsModal()" class="btn btn-rounded btn-lg btn-how-to mb-3">TRY ANOTHER LEVEL</a>
-                  <a role="button" id="level3" onclick="startLevel('3')" class="btn btn-rounded btn-lg btn-how-to mb-3">TRY LEVEL 3</a>
-                  <a role="button" href="index.html" class="btn btn-rounded btn-lg btn-how-to mb-3">RETURN TO HOME</a>
-               </div>
-            </div>   
+        </div>
+        <!--Help Modal-->
+        <div class="modal" id="helpModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span aria-label="close" role="button" class="close" onclick="closeHelpModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <h2>How to Play</h2>
+                        <p>
+                            The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-sm btn-modal" onclick="closeHelpModal()" value="Close" />
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-       <!--Help Modal-->
-      <div class="modal" id="helpModal">
-         <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <span aria-label="close" role="button" class="close" onclick="closeHelpModal()">&times;</span>
-               </div>
-               <div class="modal-body">
-                  <h2>How to Play</h2>
-                  <p>The aim of the game is to flip two cards at a time and try to memorize where they are in order to match a pair. Once all pairs are matched the level has been completed. Try beat your time or try the harder level!</p>
-               </div>
-               <div class="modal-footer">
-                  <input class="btn btn-sm btn-modal" onclick="closeHelpModal()" value="Close">
-               </div>
-            </div>
-         </div>
-      </div>
+        </div>
         <!--Hints Modal-->
-      <div class="modal" id="hintsModal">
-         <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <span aria-label="close" role="button" class="close" onclick="closeHintsModal()">&times;</span>
-               </div>
-               <div class="modal-body">
-                  <p class="rainbow-text">Sorry! You have used all your hints for this level.</p>
-               </div>
-               <div class="modal-footer">
-                  <input class="btn btn-sm btn-modal" onclick="closeHintsModal()" value="Close">
-               </div>
+        <div class="modal" id="hintsModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span aria-label="close" role="button" class="close" onclick="closeHintsModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <p class="rainbow-text">Sorry! You have used all your hints for this level.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-sm btn-modal" onclick="closeHintsModal()" value="Close" />
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      
-        
-    <script type="module" src="./assets/javascript/game.js"></script>
+        </div>
+        <script type="module" src="./assets/javascript/game.js"></script>
     </body>
 </html>

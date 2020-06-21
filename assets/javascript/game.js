@@ -1,6 +1,15 @@
-import { playGame,hint,closeHintsModal,levelOptionsModal } from './gameengine.js';
-import { createBoard } from './createboard.js';
-import { startLevel } from './main.js'
+import {
+	playGame,
+	hint,
+	closeHintsModal,
+	levelOptionsModal
+} from './gameengine.js';
+import {
+	createBoard
+} from './createboard.js';
+import {
+	startLevel
+} from './main.js'
 import * as debug from './debug.js';
 import * as sound from './sound.js';
 import * as utils from './utils.js';
@@ -20,32 +29,22 @@ window.setLevel = setLevel;
 window.startGame = startGame;
 
 //export let level = 1;
-
-
-
-
+//starts game and sets selected level 
 (function start() {
-    startGame();
-  
-  })();
+	startGame();
+})();
 
 
-  function setLevel(selectedLevel)
-  {
-    sessionStorage.setItem("level",selectedLevel);
-    debug.log("Setting level to " + selectedLevel);
-    //location.reload();
-    //startGame();
-  }
-
-export function startGame()
-{
-  debug.log("startGame");
-  createBoard(sessionStorage.getItem("level"));
-  playGame();
-  
+function setLevel(selectedLevel) {
+	sessionStorage.setItem("level", selectedLevel);
+	debug.log("Setting level to " + selectedLevel);
+	//location.reload();
+	//startGame();
 }
 
+export function startGame() {
+	debug.log("startGame");
+	createBoard(sessionStorage.getItem("level"));
+	playGame();
 
-
-
+}

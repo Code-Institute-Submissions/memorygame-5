@@ -12,7 +12,7 @@
     overflow: auto;
 }
 
-.dogbackg {
+.gamebackg {
      background: linear-gradient(rgb(192, 192, 243),rgb(196, 235, 181),rgb(235, 148, 235));
      height: 100%;
 }
@@ -45,7 +45,7 @@ h1 {
      text-decoration: none;
 }
 
- .btn-level-1{
+.btn-level-1{
      background-color: #dc9ceb;
      color: white;
 }

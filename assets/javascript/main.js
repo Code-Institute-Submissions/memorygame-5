@@ -9,16 +9,14 @@ window.openLevelsModal = utils.openLevelsModal;
 window.closeLevelsModal = utils.closeLevelsModal;
 window.startLevel = startLevel;
 
-
 export function test() {
-	debug.log("test function");
-
-
+  debug.log("test function");
 }
+
 //stores the choosen level in the session
 export function startLevel(level) {
-	sessionStorage.setItem("level", level);
-	window.location.href = "./game.html";
+  sessionStorage.setItem("level", level);
+  window.location.href = "./game.html";
 }
 
 

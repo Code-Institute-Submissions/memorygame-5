@@ -1,15 +1,6 @@
-import {
-	playGame,
-	hint,
-	closeHintsModal,
-	levelOptionsModal
-} from './gameengine.js';
-import {
-	createBoard
-} from './createboard.js';
-import {
-	startLevel
-} from './main.js'
+import {playGame, hint, closeHintsModal,levelOptionsModal} from './gameengine.js';
+import {createBoard} from './createboard.js';
+import {startLevel} from './main.js'
 import * as debug from './debug.js';
 import * as sound from './sound.js';
 import * as utils from './utils.js';
@@ -23,28 +14,25 @@ window.closeLevelsModal = utils.closeLevelsModal;
 window.openLevelsModal = utils.openLevelsModal;
 window.levelOptionsModal = levelOptionsModal;
 window.closeHintsModal = closeHintsModal;
-window.hint = hint; //this uses the hint function defined in the gamengine file
+window.hint = hint;
 window.setLevel = setLevel;
-
 window.startGame = startGame;
 
-//export let level = 1;
-//starts game and sets selected level 
+//starts game and 
 (function start() {
-	startGame();
+  startGame();
 })();
 
-
+//Sets selected level 
 function setLevel(selectedLevel) {
-	sessionStorage.setItem("level", selectedLevel);
-	debug.log("Setting level to " + selectedLevel);
-	//location.reload();
-	//startGame();
+  sessionStorage.setItem("level", selectedLevel);
+  debug.log("Setting level to " + selectedLevel);
 }
 
+//starts correct level in the start function
 export function startGame() {
-	debug.log("startGame");
-	createBoard(sessionStorage.getItem("level"));
-	playGame();
+  debug.log("startGame");
+  createBoard(sessionStorage.getItem("level"));
+  playGame();
 
 }

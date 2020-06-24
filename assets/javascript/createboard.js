@@ -35,7 +35,7 @@ export function createBoard(level) {
   }
   imagesAllocation = Array(numberRows * cardsPerRow).fill(0);
   debug.log("Creating Game Board for " + numberRows + " rows and " + cardsPerRow + " cards per row");
-  utils.shuffleImagesTest(imagesAllocation); //randomize allocations
+  utils.shuffleImages(imagesAllocation); //randomize allocations
 
   //creates card rows
   var i = 0;

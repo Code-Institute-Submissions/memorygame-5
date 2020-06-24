@@ -1,8 +1,8 @@
 import * as debug from './debug.js';
 import * as utils from './utils.js';
+import * as sound from './sound.js';
 
-window.enableMusic = utils.enableMusic;
-window.disableMusic = utils.disableMusic;
+window.toggleSound = sound.toggleSound;
 window.openHelpModal = utils.openHelpModal;
 window.closeHelpModal = utils.closeHelpModal;
 window.openLevelsModal = utils.openLevelsModal;

@@ -9,17 +9,16 @@
         <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body class="gamebackg">
-        <audio id="notifypop" src="FunAdventure.mp3" loop="loop" autoplay="autoplay"></audio>
+        <audio id="notifypop" src="assets/sounds/FunAdventure.mp3" loop="loop" autoplay="autoplay"></audio>
         <div id="game-section">
             <div class="container text-center">
-                <h1 class="landing-text center">FLIPCARD</h1>
+                <h1 class="landing-text center mt-2">FLIPCARD</h1>
             </div>
             <!--Control Icons-->
             <div class="container">
                 <div class="col-12 text-center">
-                    <i class="fa fa-volume-off" onclick="disableMusic()"></i>
                     <i class="fa fa-info-circle" onclick="openHelpModal()"></i>
-                    <i class="fa fa-volume-up" onclick="enableMusic()"></i>
+                    <i class="fa fa-volume-up" onclick="toggleSound()"></i>
                 </div>
             </div>
             <!--Scoreboard Section-->

@@ -51,7 +51,7 @@ export function playGame() {
   } else {
     utils.log("Cards not defined");
 
-  utils.shuffleImagesTest(imagesAllocation)
+  utils.shuffleImages(imagesAllocation)
     };
 
 }

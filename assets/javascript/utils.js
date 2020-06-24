@@ -1,5 +1,6 @@
 import * as sound from './sound.js';
 import * as debug from './debug.js';
+import {imagesAllocation} from './createboard.js'
 
 export function validateElement(elementName) {
 
@@ -21,16 +22,6 @@ export function assignClickListner(element, func) {
     else
       console.log("Could not add listener for element " + element + " it does not exist");
   }
-}
-
-//plays music
-export function enableMusic() {
-  sound.playMusic();
-}
-
-//turns off music
-export function disableMusic() {
-  sound.stopMusic();
 }
 
 //Retrieves Help Modal 
@@ -88,13 +79,4 @@ function IsNumberAllocated(number, images) {
       return true;
   }
   return false;
-}
-
-// images appear beside each other for testing
-export function shuffleImagesTest(images) {
-
-  for (var i = 0; i < images.length; i++) {
-    images[i] = i + 1;
-    //log("Assigning values to image: " + i + " image = " + imagesAllocation[i] + " randomPos = " + randomPos);
-  }
 }

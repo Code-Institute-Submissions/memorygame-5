@@ -149,7 +149,7 @@ i {
      -webkit-transform-style: preserve-3d;
      -ms-transform-style: preserve-3d;
      transition: transform .5s;
-     -webkit-transition: transform .5s;
+     -webkit-transition: -webkit-transform .5s;
      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
@@ -157,7 +157,7 @@ i {
      transform: scale(0.97);
      -webkit-transform:scale(0.97); 
      transition: transform .2s;
-     -webkit-transition: transform .2s;
+     -webkit-transition: -webkit-transform .2s;
 }
 
 .memory-card.flip {

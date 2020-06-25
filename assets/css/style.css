@@ -5,6 +5,7 @@
     background-size: 600%, 600%;
     height: 100%;
     animation: gradient 8s ease-in infinite;
+    -webkit-animation: gradient 8s ease-in infinite;
 }
 
 #game-section {
@@ -66,6 +67,7 @@ h1 {
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
+  -webkit-transform: translateY(-7px);
 }
 
 .btn-modal {
@@ -133,14 +135,19 @@ i {
      align-items: center;
      justify-content: center;
      transform: scale(1);
+     -webkit-transform: scale(1);
      transform-style: preserve-3d;
+     -webkit-transform-style: preserve-3d;
      transition: transform .5s;
+     -webkit-transition: transform .5s;
      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
 .memory-card:active {
      transform: scale(0.97);
+     -webkit-transform:scale(0.97); 
      transition: transform .2s;
+     -webkit-transition: transform .2s;
 }
 
 .memory-card.flip {

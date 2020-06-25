@@ -145,6 +145,9 @@ i {
 
 .memory-card.flip {
      transform: rotateY(180deg);
+     -webkit-transform:  rotateY(180deg); 
+     -ms-transform:   rotateY(180deg);
+      
 }
 
 img {
@@ -163,6 +166,8 @@ img {
 
 .front-face {
      transform: rotateY(180deg);
+     -webkit-transform:  rotateY(180deg); 
+     -ms-transform:   rotateY(180deg);
 }
 
 /* Footer*/

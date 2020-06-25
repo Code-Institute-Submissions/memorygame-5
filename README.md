@@ -37,10 +37,10 @@ The following languages, frameworks and libraries were used throughout the desig
 In order to assure that the game performs efficiently and the features carry out the functions that they are created to, I conducted several tests which are outlined in a seperate [document](/test.md).
 
 Please find a summary of how the site was tested and the results in the table below: 
-![Test Results](/testtable/TestTable.jpg)   
+![Test Results](/testfiles/TestTable.jpg)   
 
 ## Deployment
-I used GitPod to develop my project, this is where I wrote my code and ran it to assure it performed. On completion of each section I committed the work to GitHub. From the Github platform, I deployed the project to a hosting platform.  The project is hosted on Github Pages; in order to make the project go live, I had to insure I had the correct settings employed in Github. There is a Github Pages section in the repository settings which needed to be activated. Once activated it advised me that my site was available at the following address: [https://jadeosull93.github.io/my-full-template/](https://jadeosull93.github.io/my-full-template/) - it is critical to note that the homepage needs to be identified as index.html for Gitpages to find it and publish the site. 
+I used GitPod to develop my project, this is where I wrote my code and ran it to assure it performed. On completion of each section I committed the work to GitHub. From the Github platform, I deployed the project to a hosting platform.  The project is hosted on Github Pages; in order to make the project go live, I had to insure I had the correct settings employed in Github. There is a Github Pages section in the repository settings which needed to be activated. Once activated it advised me that my site was available at the following address: [https://jadeosull93.github.io/memorygame/](https://jadeosull93.github.io/memorygame/) - it is critical to note that the homepage needs to be identified as index.html for Gitpages to find it and publish the site. 
 ##### When deploying FlipCard to Github Pages the steps below need to be followed: 
 1. Navigate to 'Jadeosull93/memorygame' 
 2. On the naviagtion bar at the top click 'settings'

@@ -25,8 +25,8 @@
 
 ## How Responsiveness Was Tested
 I investigated the responsiveness of the website by utilizing the Google Chrome extension to establish that the site was receptive to all device sizes; mobiles, tablets and monitors. 
-The responsiveness of the web game was futher tested by using [amiresponsive.is](http://ami.responsivedesign.is/). Image results below:
-(/assets/img/testingimgs/responsivedisplay.PNG)  
+The responsiveness of the web game was futher tested by using [amiresponsive.is](http://ami.responsivedesign.is/). 
+
 ### Issues Encountered with Responsiveness during design:
 #### GameBoard
 Initally the gameboard grid wasn't responding to mobile size devices. This was an oversight on my part by setting the height and width dimensions too large. I resolved this issue by using VW and VH as the measurements and setting a max-height and max-width.

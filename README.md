@@ -1,5 +1,5 @@
 # Flipcard Memory Game Project
-This project is a simple game to test the users memory developed using HTML,CSS and Javascript. 
+This project is a simple game to test the users memory developed using HTML,CSS and Javascript. To play the game the user must flip two cards and try memorize what is on them in order to flip a pair. The game has three different levels for users to try. 
 
 Here is a link to the live website: [FlipCard](https://jadeosull93.github.io/memorygame/)
 ## UX
@@ -34,19 +34,11 @@ The following languages, frameworks and libraries were used throughout the desig
 *	[Canva](https://www.canva.com/) – to make images for the cards.
 
 ## Testing
-In order to assure that the game performs efficiently and the features carry out the functions that they are created to, I conducted several tests which are outlined below.
-*	I investigated the responsiveness of the website by utilizing the Google Chrome extension to establish that the site was receptive to all device sizes; mobiles, tablets and monitors. I used the following tool to study the responsiveness of the site [responsivetesttool.com](http://responsivetesttool.com/) - a website that has almost every device listed from mobile phones to tablets and laptops, it allows you to examine what your site looks like across the specific screen sizes of numerous brands and devices. I found this tool particularly useful. 
-
-*	I tested all the navigation links repeatedly to guarantee that they worked from each individual page.
-
-*	I loaded pages several times to verify that the images loaded perfectly every time, as well as establishing that images appeared zoomed if they were designed to do so. 
-
-*	I confirmed that all buttons on the site performed the task that they were set out to, E.G; the hint button works for each level.
-
-*	While writing the JS for the game I used a debug.log function to log what each fucntion was doing to prevent any erros from occuring.
+In order to assure that the game performs efficiently and the features carry out the functions that they are created to, I conducted several tests which are outlined in a seperate [document](/test.md).
 
 Please find a summary of how the site was tested and the results in the table below: 
-![Test Results](/testtable/TestTable.jpg)    
+![Test Results](/testtable/TestTable.jpg)   
+
 ## Deployment
 I used GitPod to develop my project, this is where I wrote my code and ran it to assure it performed. On completion of each section I committed the work to GitHub. From the Github platform, I deployed the project to a hosting platform.  The project is hosted on Github Pages; in order to make the project go live, I had to insure I had the correct settings employed in Github. There is a Github Pages section in the repository settings which needed to be activated. Once activated it advised me that my site was available at the following address: [https://jadeosull93.github.io/my-full-template/](https://jadeosull93.github.io/my-full-template/) - it is critical to note that the homepage needs to be identified as index.html for Gitpages to find it and publish the site. 
 ##### When deploying FlipCard to Github Pages the steps below need to be followed: 
@@ -55,7 +47,7 @@ I used GitPod to develop my project, this is where I wrote my code and ran it to
 3. Scroll to the GitHub Pages section
 4. Select 'Master Branch' from the 'Source' dropdown menu
 5. Click confirm my selection
-6. Yellow Door Coffee should now be live on Github Pages
+6. Flipcard should now be live on Github Pages
 
 #### In order to run FlipCard locally the following steps need to be followed:
 1. Navigate to 'Jadeosull93/memorygame'
@@ -63,7 +55,7 @@ I used GitPod to develop my project, this is where I wrote my code and ran it to
 3. Copy the url in the dropdown box
 4. Using your IDE of choice open up your preferred terminal
 5. Choose your desired file location
-6. Copy and paste the following code into your terminal to clone Yellow Door Coffee
+6. Copy and paste the following code into your terminal to clone Flipcard
 
 git clone https://github.com/Jadeosull93/memorygame.git
 
@@ -72,7 +64,7 @@ In addition to Github and Gitpod, I chose to run my code locally on an internal 
 
 ## Credits
 ### Content
-The game and the JS used in the game was inspired by the following YouTube tutorial: (https://www.youtube.com/watch?v=ZniVgo8U7ek&t=17s).
+The game and the JS used in the game was inspired by the following [YouTube tutorial](https://www.youtube.com/watch?v=ZniVgo8U7ek&t=17s).
 ### Media
 The images on the cards were created by using [Canva](https://www.canva.com/).
 ### Acknowledgements

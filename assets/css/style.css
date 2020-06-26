@@ -102,6 +102,9 @@ i {
      max-height: 80vh;
      font-size: 1rem;
      perspective: 1000px;
+     -webkit-perspective: 1000px;
+     -o-perspective: 1000px;
+     -moz-perspective: 1000px;
 }
 
 .row {
@@ -135,24 +138,36 @@ i {
      align-items: center;
      justify-content: center;
      transform: scale(1);
-     -webkit-transform: scale(1);
      transform-style: preserve-3d;
-     -webkit-transform-style: preserve-3d;
      transition: transform .5s;
-     -webkit-transition: transform .5s;
+     -webkit-transform: scale(1);
+     -webkit-transform-style: preserve-3d;
+     -webkit-transition: -webkit-transform .5s;
+     -o-transform: scale(1);
+     -o-transform-style: preserve-3d;
+     -o-transition: -o-transform .5s;
+     -o-moz: scale(1);
+     -o-moz: preserve-3d;
+     -o-moz: -o-moz .5s;
      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
 .memory-card:active {
      transform: scale(0.97);
      -webkit-transform: scale(0.97); 
+     -o-transform: scale(0.97); 
+     -moz-transform: scale(0.97); 
      transition: transform .2s;
-     -webkit-transition: transform .2s;
+     -webkit-transition: -webkit-transform .2s;
+     -o-transition: -o-transform .2s;
+     -moz-transition: -moz-transform .2s;
 }
 
 .memory-card.flip {
      transform: rotateY(180deg);
      -webkit-transform:  rotateY(180deg);   
+     -o-transform:  rotateY(180deg);  
+     -moz-transform:  rotateY(180deg);  
 }
 
 img {
@@ -175,6 +190,8 @@ img {
 .front-face {
      transform: rotateY(180deg);
      -webkit-transform:  rotateY(180deg); 
+     -o-transform:  rotateY(180deg); 
+     -moz-transform:  rotateY(180deg); 
 }
 
 /* Footer*/

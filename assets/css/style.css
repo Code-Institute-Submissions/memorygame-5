@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* Backgrounds*/
 
 .indexbg {
@@ -100,7 +107,6 @@ i {
      max-height: 80vh;
      font-size: 1rem;
      perspective: 1000px;
-     -webkit-perspective: 1000px;
 }
 
 .row {
@@ -134,22 +140,17 @@ i {
      align-items: center;
      justify-content: center;
      transform: scale(1);
-     -webkit-transform: scale(1);
      transform-style: preserve-3d;
-     -webkit-transform-style: preserve-3d;
      transition: transform .5s;
-     -webkit-transition: -webkit-transform .5s;
      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
+
 .memory-card:active {
      transform: scale(0.97);
-     -webkit-transform:scale(0.97); 
      transition: transform .2s;
-     -webkit-transition: -webkit-transform .2s;
 }
 .memory-card.flip {
-     transform: rotateY(180deg);
-     -webkit-transform:  rotateY(180deg);   
+     transform: rotateY(180deg);   
 }
 
 
@@ -165,12 +166,10 @@ img {
      position: absolute;
      border-radius: 5px;
      backface-visibility: hidden;
-     -webkit-backface-visibility: hidden;
 }
 
 .front-face {
      transform: rotateY(180deg);
-     -webkit-transform: rotateY(180deg);
 }
 
 /* Footer*/

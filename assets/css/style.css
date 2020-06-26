@@ -152,7 +152,7 @@ i {
 
 .memory-card.flip {
      transform: rotateY(180deg);
-     -webkit-transform:  rotateY(179.9deg);   
+     -webkit-transform:  rotateY(180deg);   
 }
 
 img {
@@ -167,6 +167,9 @@ img {
      position: absolute;
      border-radius: 5px;
      backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
+     -o-backface-visibility: hidden;
 }
 
 .front-face {

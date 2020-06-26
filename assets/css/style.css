@@ -5,7 +5,7 @@
     background-size: 600%, 600%;
     height: 100%;
     animation: gradient 8s ease-in infinite;
-    -webkit-animation: gradient 8s ease-in infinite;
+    
 }
 
 #game-section {
@@ -67,7 +67,6 @@ h1 {
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
-  -webkit-animation: translateY(-7px);
 }
 
 .btn-modal {
@@ -78,7 +77,6 @@ h1 {
     position: fixed;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -102,9 +100,6 @@ i {
      max-height: 80vh;
      font-size: 1rem;
      perspective: 1000px;
-     -webkit-perspective: 1000px;
-     -o-perspective: 1000px;
-     -moz-perspective: 1000px;
 }
 
 .row {
@@ -140,34 +135,18 @@ i {
      transform: scale(1);
      transform-style: preserve-3d;
      transition: transform .5s;
-     -webkit-transform: scale(1);
-     -webkit-transform-style: preserve-3d;
-     -webkit-transition: -webkit-transform .5s;
-     -o-transform: scale(1);
-     -o-transform-style: preserve-3d;
-     -o-transition: -o-transform .5s;
-     -o-moz: scale(1);
-     -o-moz: preserve-3d;
-     -o-moz: -o-moz .5s;
      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
 .memory-card:active {
      transform: scale(0.97);
-     -webkit-transform: scale(0.97); 
-     -o-transform: scale(0.97); 
-     -moz-transform: scale(0.97); 
      transition: transform .2s;
-     -webkit-transition: -webkit-transform .2s;
-     -o-transition: -o-transform .2s;
-     -moz-transition: -moz-transform .2s;
+     
 }
 
 .memory-card.flip {
      transform: rotateY(180deg);
-     -webkit-transform:  rotateY(180deg);   
-     -o-transform:  rotateY(180deg);  
-     -moz-transform:  rotateY(180deg); 
+}
 
 
 img {
@@ -182,16 +161,10 @@ img {
      position: absolute;
      border-radius: 5px;
      backface-visibility: hidden;
-     -moz-backface-visibility: hidden;
-     -webkit-backface-visibility: hidden;
-     -o-backface-visibility: hidden;
 }
 
 .front-face {
      transform: rotateY(180deg);
-     -webkit-transform:  rotateY(180deg); 
-     -o-transform:  rotateY(180deg); 
-     -moz-transform:  rotateY(180deg); 
 }
 
 /* Footer*/

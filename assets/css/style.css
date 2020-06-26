@@ -182,10 +182,9 @@ img {
      padding: 5px;
      position: absolute;
      border-radius: 5px;
+     -webkit-transform: translate3d(0,0,0);
      backface-visibility: hidden;
-     -moz-backface-visibility: hidden;
-     -webkit-backface-visibility: hidden;
-     -o-backface-visibility: hidden;
+     
 }
 
 .front-face {

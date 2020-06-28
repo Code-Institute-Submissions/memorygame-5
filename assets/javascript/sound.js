@@ -1,14 +1,5 @@
 
-
-//stops the audio file
-//export function stopMusic() {
-   //popupsound.pause(); 
-//}
-
-//play the audio file
-//export function playMusic() {
-    //popupsound.play();
-//}
+//allows music to play or pause
 export function toggleSound() {
   var popupsound = document.getElementById("notifypop");
   if (popupsound.paused)

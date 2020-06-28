@@ -79,7 +79,6 @@ export function hint() {
     for (var i = 0; i < cards.length; i++) {
       if (cards[i].dataset.state === "unflipped")
         cards[i].classList.add('flip');
-
     }
     setTimeout(hide, 600)
   }
@@ -90,7 +89,6 @@ export function hint() {
     for (var i = 0; i < cards.length; i++) {
       if (cards[i].dataset.state === "unflipped")
         cards[i].classList.remove('flip');
-
     }
   }
 }
@@ -108,7 +106,6 @@ function flipCard() {
     hasFlippedCard = true;
     firstCard = this;
     startTimer();
-
     return;
   }
 
@@ -135,31 +132,30 @@ function checkForMatch() {
   } else {
     unflipCardPair();
   }
-
   debug.log("Matched: " + isMatch);
-
 }
+
 // removes event listener from matched cards
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   firstCard.dataset.state = "flipped";
   secondCard.dataset.state = "flipped";
-
   resetBoard();
 }
 
+//flips cards back to frontface if not a match
 function unflipCardPair() {
   lockBoard = true;
 
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
   }, 1200);
 }
 
+//returns board to state before cards which are not a match were flipped
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
@@ -170,31 +166,25 @@ function addMove() {
   movesCount++;
   debug.log(moves.innerHTML + " Adding " + movesCount + " to " + moves);
   document.querySelector(".moves").innerHTML = movesCount;
-
 }
 
 // GAME OVER
 function gameOver() {
-
   //show modal on game end and stops timer
   openModal();
   stopTimer();
-
 }
 
 //closes game over modal and displays level options modal
 export function levelOptionsModal() {
   closeModal();
   openLevelsModal();
-
 }
 
 // allows game over modal to be closed
 function closeModal() {
-
   debug.log("Closing Model");
   modal.style.display = 'none'; 
-  ;
 }
 
 // allows game over modal to be opened
@@ -219,7 +209,6 @@ function startTimer() {
         if (elaspedTime != null) {
           document.querySelector(".timer").innerHTML = elaspedTime;
         }
-
       }, 1000);
     }
   }

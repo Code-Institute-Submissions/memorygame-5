@@ -2,14 +2,12 @@ import * as sound from './sound.js';
 import * as debug from './debug.js';
 import {imagesAllocation} from './createboard.js'
 
+//debugging function to ensure element defined
 export function validateElement(elementName) {
-
   if (elementName) {
-
   } else {
     log("ERROR: Element " + elementName + " is not defined");
   }
-
 }
 
 //listeners for clicks in order to execute functions

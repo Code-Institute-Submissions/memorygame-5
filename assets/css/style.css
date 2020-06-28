@@ -6,8 +6,7 @@
     background-size: 600%, 600%;
     height: 100%;
     animation: gradient 8s ease-in infinite;
-    -webkit-animation: gradient 8s ease-in infinite;
-    
+    -webkit-animation: gradient 8s ease-in infinite;  
 }
 
 #game-section {
@@ -44,7 +43,7 @@ h1 {
 
 /*Buttons and Links*/
 
- a:not([href]) {
+a:not([href]) {
      color:white;
      text-decoration: none;
 }
@@ -107,7 +106,6 @@ i {
      font-size: 1rem;
      perspective: 1000px;
      -webkit-perspective: 1000px;
-
 }
 
 .row {

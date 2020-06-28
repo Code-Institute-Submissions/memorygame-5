@@ -162,7 +162,6 @@ i {
      -webkit-transform: rotateY(180deg) translate3d(0, 0, 0);      
 }
 
-
 img {
      width: 100%;
      height:auto;
@@ -265,6 +264,18 @@ footer {
 /*Key Frames*/
 
 @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@-webkit-keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}

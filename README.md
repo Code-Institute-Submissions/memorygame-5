@@ -8,8 +8,7 @@ The website was designed with ease of use for game players at the fore-front of 
 -   As a game player, I want to be able to have control over any audio on the site.
 -   As a game player, I want to be able to access how to play the game at any time.
 -	As a game player, I want to see bright eye-catching visual images which add to my experience.
--	As a game player, I want to be able to see how I am doing in the game: how many moves i've made and how long it has taken me.
--   As a game player, I want to be able to easily refresh the game at any time.
+-	As a game player, I want to be able to see how I am doing in the game: how many moves i've made and how long it has taken me. 
 -   As a game player, I want to be able to receive a hint if I am struggling with the game.
 
 ### Mock Ups

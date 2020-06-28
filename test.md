@@ -18,7 +18,6 @@
 -I created all the images for the game board cards using canva.com and ensured I was bright colours that complimented the game page background
 ###### As a game player, I want to be able to see how I am doing in the game: how many moves i've made and how long it has taken me.
 - Above the game board is a scoreboard section which enables the user to see the time elapsed since they made the first move in the game along with the number of moves they made. 
-###### As a game player, I want to be able to easily refresh the game at any time.
 ###### As a game player, I want to be able to receive a hint if I am struggling with the game. 
 - The buttons panel above the game board allows users to click a hint button which flashes the cards on the board for 600 milliseconds. The number of hints allowed in the game varies on whatever level the user has picked. 
 

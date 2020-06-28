@@ -46,6 +46,16 @@ Another tool I used to clean the JS in the project was [JShint.com](https://jshi
 
 As stated above the main issue I ran into with JS not working as intended was not having declared elements correctly. Some other issues included not having exported/imported functions into the correct JS file. This was easy to solve with the help of chrome developer tools.
 
+## Issues during testing:
+One major issue that occured during testing and deployment was how the game functioned on iOS and Safari. There was an issue with the cards flipping during the game. Only the first card would flip correctly and the rest would turn white. 
+To solve this issue several changes were made. From researching similar issues online I found various different possible solutions. Unfortunatly, most of these did not fix the issue including:
+- changing the degrees of the transform rotate so it is not exactly 90 degrees or a multiple of 90 degrees.
+- adding -webkit prefixes to all transforms and backface-visibilty's 
+Through trial and testing I found that changing the background color of the Box Div that the front-face and back-face of the card are stored in; from the color white to transparent worked.
+
+
+
+
 
 
 

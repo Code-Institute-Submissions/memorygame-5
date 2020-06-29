@@ -12,12 +12,11 @@ export function validateElement(elementName) {
 
 //listeners for clicks in order to execute functions
 export function assignClickListner(element, func) {
-  if ((element) && (typeof func === "function"))
+  if ((element) && (typeof func === "function")) {
     element.addEventListener('click', func);
-  else {
-    if (element)
+  } else if (element) {
       console.log("Could not add listner, function does not exist");
-    else
+  } else {
       console.log("Could not add listener for element " + element + " it does not exist");
   }
 }

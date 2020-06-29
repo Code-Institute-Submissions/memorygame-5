@@ -2,8 +2,10 @@
 //allows music to play or pause
 export function toggleSound() {
   var popupsound = document.getElementById("notifypop");
-  if (popupsound.paused)
+  if (popupsound.paused) {
     popupsound.play();
-  else
+  }
+  else {
     popupsound.pause();
+  }
 }

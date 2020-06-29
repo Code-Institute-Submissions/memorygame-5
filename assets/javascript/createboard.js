@@ -59,8 +59,9 @@ function createCardRow(rowNumber) {
       createBox(rowDiv, i);
     }
     debug.log("Created new element " + rowDiv);
-  } else
+  } else {
     debug.log("Could not create new element in " + gameboard) + " It may not exist";
+  }
   // for number of cards
   //create card
 }

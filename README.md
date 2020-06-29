@@ -65,6 +65,6 @@ In addition to Github and Gitpod, I chose to run my code locally on an internal 
 ### Content
 The game and the JS used in the game was inspired by the following [YouTube tutorial](https://www.youtube.com/watch?v=ZniVgo8U7ek&t=17s).
 ### Media
-The images on the cards were created by using [Canva](https://www.canva.com/).
+The images on the cards were created by using [Canva](https://www.canva.com/). The background music for the game was sourced from [SoundImage.org](https://soundimage.org/fantasywonder/).
 ### Acknowledgements
 I would also like to give a special thanks to my father [John O' Sullivan](https://www.linkedin.com/in/john-o-sullivan-15b17a34/), who gave up his time to give me guidence, support and encouragement and helped my to understand Javascript in depth. I would also like to thank my mentor [Precious Ijege](https://github.com/precious-ijege/) who was always happy to give excellent feedback and guide me in the right direction throughout the duration of the project.

@@ -59,6 +59,7 @@ To solve this issue several changes were made. From researching similar issues o
 Through trial and testing I found that changing the background color of the Box Div that the front-face and back-face of the card are stored in; from the color white to transparent worked.
 
 
+other things to mention indexing length - 1 
 
 
 

@@ -59,7 +59,6 @@ export function shuffleImages(images) {
       randomPos = Math.floor(Math.random() * (numberOfImages + 1));
       attempts++;
       if (attempts > 40) {
-        debug.log("Giving up");
         break;
       }
     }

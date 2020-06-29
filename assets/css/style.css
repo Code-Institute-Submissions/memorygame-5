@@ -1,14 +1,5 @@
 /* Backgrounds*/
 
-.indexbg {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-image: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 600%, 600%;
-    height: 100%;
-    animation: gradient 8s ease-in infinite;
-    -webkit-animation: gradient 8s ease-in infinite;  
-}
-
 #game-section {
     display: block;
     overflow: auto;
@@ -257,32 +248,6 @@ footer {
 .moves, .timer {
      color:aliceblue;
      font-size: 30px;
-}
-
-/*Key Frames*/
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-@-webkit-keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 /* Media Queries */

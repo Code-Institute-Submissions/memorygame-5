@@ -48,6 +48,8 @@ On seeing this message I knew what element to go back and fix/define.
 
 Another tool I used to clean the JS in the project was [JShint.com](https://jshint.com/). This is a website which checks if JavaScript source code complies with coding rules e.g if all brackets are present. 
 
+One bug I ran into while coding the game was on the function in *createboard.js* called setImageSources() - at first the sources were not allocating correctly, this was because imageallocation contains numbers from 1 to n but the array index needs to be from zero for setimagesources() to function. To correct this problem I had to -1 from imageallocation as so: imagesAllocation[i] - 1.
+
 As stated above the main issue I ran into with JS not working as intended was not having declared elements correctly. Some other issues included not having exported/imported functions into the correct JS file. This was easy to solve with the help of chrome developer tools.
 
 ## Issues during testing:
@@ -59,7 +61,6 @@ To solve this issue several changes were made. From researching similar issues o
 Through trial and testing I found that changing the background color of the Box Div that the front-face and back-face of the card are stored in; from the color white to transparent worked.
 
 
-other things to mention indexing length - 1 
 
 
 

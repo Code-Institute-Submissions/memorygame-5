@@ -7,6 +7,8 @@
 
 *	I confirmed that all buttons on the site performed the task that they were set out to, E.G; the hint button works for each level.
 
+*   The HTML and CSS were validated on [W3](https://validator.w3.org/), there were 13 errors found in total. However, all errors were successfully corrected.
+
 ## How User Stories Were Tested:
 ###### As a game player, I want clear navigation so that I can quickly access what I need, i.e how to play or a different level.
 - Both web pages have clearly labelled buttons for users and the game page also has an icon section. The game landing page displays a clear panel of buttons.
@@ -25,6 +27,9 @@
 ## How Responsiveness Was Tested
 I investigated the responsiveness of the website by utilizing the Google Chrome extension to establish that the site was receptive to all device sizes; mobiles, tablets and monitors. 
 The responsiveness of the web game was futher tested by using [amiresponsive.is](http://ami.responsivedesign.is/). 
+
+I also tested the responsiveness by asking family and friends to play the game on their mobiles/tablets - the following devices were used to test: Iphone 11, Iphone 7, Samsung Galaxy Note and Samsung Galaxy Tab S6.
+It was through this testing that the issue with cards not flipping correctly on iOS was picked up. This is discussed in the JS testing and debugging section below. 
 
 ### Issues Encountered with Responsiveness during design:
 #### GameBoard
@@ -50,6 +55,7 @@ One major issue that occured during testing and deployment was how the game func
 To solve this issue several changes were made. From researching similar issues online I found various different possible solutions. Unfortunatly, most of these did not fix the issue including:
 - changing the degrees of the transform rotate so it is not exactly 90 degrees or a multiple of 90 degrees.
 - adding -webkit prefixes to all transforms and backface-visibilty's 
+
 Through trial and testing I found that changing the background color of the Box Div that the front-face and back-face of the card are stored in; from the color white to transparent worked.
 
 
